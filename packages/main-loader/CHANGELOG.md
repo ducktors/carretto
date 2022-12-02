@@ -1,5 +1,11 @@
 # @zaino/main-loader
 
+## 0.0.6
+
+### Patch Changes
+
+- 5b10cd3: test release 2
+
 ## 0.0.5
 
 ### Patch Changes
