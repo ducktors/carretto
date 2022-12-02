@@ -1,5 +1,12 @@
 # @zaino/mongodb
 
+## 0.0.7
+
+### Patch Changes
+
+- acd6d08: first ci publish
+- ab30b7a: fix package.json
+
 ## 0.0.6
 
 ### Patch Changes
