@@ -1,5 +1,11 @@
 # @zaino/mongodb
 
+## 0.0.5
+
+### Patch Changes
+
+- 1ce0700: Test release 2
+
 ## 0.0.4
 
 ### Patch Changes

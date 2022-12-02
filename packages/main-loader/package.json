@@ -1,6 +1,6 @@
 {
   "name": "@zaino/main-loader",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": "false",
   "description": "A dataloader implementation with adapters",
   "main": "dist/index.js",
