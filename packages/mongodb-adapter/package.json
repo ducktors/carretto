@@ -1,0 +1,28 @@
+{
+  "name": "@zaino/mongodb",
+  "version": "0.0.3",
+  "private": "false",
+  "description": "MongoDB adapter for Zaino dataloader",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --build",
+    "test": "tsc && vitest run --dir=test"
+  },
+  "keywords": [],
+  "author": "Alessandro Magionami - @alemagio",
+  "license": "MIT",
+  "dependencies": {
+    "tslib": "^2.4.1"
+  },
+  "devDependencies": {
+    "graphql": "^16.6.0",
+    "main-loader": "workspace:*",
+    "mongodb": "^4.11.0",
+    "tsconfig": "workspace:*"
+  },
+  "peerDependencies": {
+    "dataloader": "^2.1.0",
+    "mongodb": "^4.11.0"
+  }
+}

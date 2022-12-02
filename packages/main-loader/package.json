@@ -1,0 +1,30 @@
+{
+  "name": "@zaino/main-loader",
+  "version": "0.0.3",
+  "private": "false",
+  "description": "A dataloader implementation with adapters",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --build",
+    "test": "vitest run --dir=test"
+  },
+  "keywords": [],
+  "author": "Alessandro Magionami - @alemagio",
+  "license": "MIT",
+  "dependencies": {
+    "object-hash": "^3.0.0",
+    "tslib": "^2.4.1"
+  },
+  "devDependencies": {
+    "@types/object-hash": "^2.2.1",
+    "dataloader": "^2.1.0",
+    "graphql": "^16.6.0",
+    "mongodb": "^4.11.0",
+    "tsconfig": "workspace:*"
+  },
+  "peerDependencies": {
+    "dataloader": "^2.1.0",
+    "mongodb": "^4.11.0"
+  }
+}
