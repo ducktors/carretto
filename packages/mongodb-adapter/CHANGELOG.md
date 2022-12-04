@@ -1,5 +1,11 @@
 # @carretto/mongodb
 
+## 0.0.5
+
+### Patch Changes
+
+- 8bb56d6: fix import of main-loader
+
 ## 0.0.4
 
 ### Patch Changes
