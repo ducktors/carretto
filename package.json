@@ -6,8 +6,8 @@
   "scripts": {
     "build": "turbo run build",
     "test": "turbo run test",
-    "ci:publish": "pnpm publish -r",
-    "ci:version": "pnpm changeset version"
+    "publish": "pnpm build && pnpm publish -r",
+    "version": "pnpm changeset version"
   },
   "devDependencies": {
     "rome": "^10.0.1",
