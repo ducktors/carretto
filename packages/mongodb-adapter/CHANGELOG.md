@@ -1,5 +1,13 @@
 # @carretto/mongodb
 
+## 0.0.6
+
+### Patch Changes
+
+- 21b99bf: build packages
+- Updated dependencies [21b99bf]
+  - @carretto/main-loader@0.0.5
+
 ## 0.0.5
 
 ### Patch Changes

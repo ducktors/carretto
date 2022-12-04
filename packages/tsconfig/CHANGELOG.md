@@ -1,5 +1,11 @@
 # @carretto/tsconfig
 
+## 0.0.4
+
+### Patch Changes
+
+- 21b99bf: build packages
+
 ## 0.0.3
 
 ### Patch Changes

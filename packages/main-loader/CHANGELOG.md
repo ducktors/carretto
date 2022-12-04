@@ -1,5 +1,11 @@
 # @carretto/main-loader
 
+## 0.0.5
+
+### Patch Changes
+
+- 21b99bf: build packages
+
 ## 0.0.4
 
 ### Patch Changes
