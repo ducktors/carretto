@@ -1,6 +1,6 @@
 import { Collection, Document, WithId } from "mongodb";
 
-import { Key, MainLoader } from 'main-loader'
+import { Key, MainLoader } from '@carretto/main-loader'
 
 export class DataloaderMongoDB<T extends WithId<Document>> extends MainLoader<T> {
 	private collection: Collection<Document>;
