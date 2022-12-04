@@ -13,12 +13,13 @@
   "author": "Alessandro Magionami - @alemagio",
   "license": "MIT",
   "dependencies": {
+    "@carretto/main-loader": "workspace:*",
     "tslib": "^2.4.1"
   },
   "devDependencies": {
     "graphql": "^16.6.0",
     "mongodb": "^4.11.0",
-    "tsconfig": "workspace:*"
+    "@carretto/tsconfig": "workspace:*"
   },
   "peerDependencies": {
     "dataloader": "^2.1.0",

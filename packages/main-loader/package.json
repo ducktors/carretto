@@ -21,7 +21,7 @@
     "dataloader": "^2.1.0",
     "graphql": "^16.6.0",
     "mongodb": "^4.11.0",
-    "tsconfig": "workspace:*"
+    "@carretto/tsconfig": "workspace:*"
   },
   "peerDependencies": {
     "dataloader": "^2.1.0",
