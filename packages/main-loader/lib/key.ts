@@ -1,8 +1,6 @@
-import { Filter } from "mongodb";
-
-export interface Key {
-	query: Filter<unknown>;
-	projection: { [k: string]: 1 };
+export interface Key<Q extends object, P> {
+	query: Q;
+	projection: P;
 	skip?: number;
 	limit?: number;
 }

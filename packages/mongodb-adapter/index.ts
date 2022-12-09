@@ -1,8 +1,9 @@
-import { Collection, Document, WithId } from "mongodb";
+import { Collection, Document, Filter, WithId } from "mongodb";
 
-import { Key, MainLoader } from '@carretto/main-loader'
+import { Key, MainLoader, MergeProjectionFn } from '@carretto/main-loader'
+import { mergeProjection, Projection } from "./lib";
 
-export class DataloaderMongoDB<T extends WithId<Document>> extends MainLoader<T> {
+export class DataloaderMongoDB<T extends WithId<Document>> extends MainLoader<T, Filter<T>, Projection> {
 	private collection: Collection<Document>;
 
 	constructor(collection: Collection<Document>) {
@@ -10,7 +11,9 @@ export class DataloaderMongoDB<T extends WithId<Document>> extends MainLoader<T>
 		this.collection = collection;
 	}
 
-	protected execute(key: Key) {
+	protected mergeProjection: MergeProjectionFn<Projection, Projection> = mergeProjection
+
+	protected execute(key: Key<Filter<T>, Projection>) {
 		return key.skip !== undefined || key.limit !== undefined
 			? this.collection
 						.find<T>(key.query, {
