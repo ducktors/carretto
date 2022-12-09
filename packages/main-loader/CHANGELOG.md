@@ -1,5 +1,11 @@
 # @carretto/main-loader
 
+## 0.0.6
+
+### Patch Changes
+
+- 65bc996: Expose mergeProjection function to adapters
+
 ## 0.0.5
 
 ### Patch Changes

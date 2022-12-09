@@ -1,5 +1,13 @@
 # @carretto/mongodb
 
+## 0.0.7
+
+### Patch Changes
+
+- 65bc996: Expose mergeProjection function to adapters
+- Updated dependencies [65bc996]
+  - @carretto/main-loader@0.0.6
+
 ## 0.0.6
 
 ### Patch Changes
