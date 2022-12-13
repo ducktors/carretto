@@ -17,8 +17,9 @@ export abstract class MainLoader<T, Q extends object, P> {
 		);
 	}
 
-	public async load(key: Key<Q, P>) {
-		return this.loader.load(key).then(() => this.onLoad(key));
+	public async load(key: Key<Q, P>): Promise<T | T[] | null> {
+		this.onLoad(key)
+		return this.loader.load(key)
 	}
 
 	protected async batchLoadFn(keys: readonly Key<Q, P>[]) {
