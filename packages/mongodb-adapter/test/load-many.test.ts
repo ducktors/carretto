@@ -8,43 +8,51 @@ import {
 	GraphQLString,
 } from "graphql";
 
-import { DataloaderMongoDB } from "..";
+import { DataloaderMongoDB } from "../dist";
 
-test("should aggregate same queries projections", async () => {
+test("should aggregate same queries projections and skip and limit", async () => {
 	const collection = {
-		findOne: vi
+		find: vi
 			.fn()
-			.mockImplementation((query, options: { projection: unknown }) => {
-				expect(options!.projection).toEqual({ firstName: 1, lastName: 1 });
-				return {
-					firstName: "Mario",
-					lastName: "Rossi",
-				};
-			}),
+			.mockImplementation(
+				(
+					query,
+					options: { projection: unknown; skip: number; limit: number },
+				) => {
+					expect(options!.projection).toEqual({ firstName: 1, lastName: 1 });
+					expect(options.skip).toBe(0);
+					expect(options.limit).toBe(15);
+					return {
+						toArray: () => ["Mario", "Luigi"],
+					};
+				},
+			),
 	};
 	const loader = new DataloaderMongoDB(collection as any);
 
 	const personType = new GraphQLObjectType({
 		name: "Person",
 		fields: () => ({
-			firstName: {
-				type: new GraphQLNonNull(GraphQLString),
+			friends: {
+				type: new GraphQLList(GraphQLString),
 				async resolve() {
-					const result = await loader.load({
+					return loader.loadMany({
 						query: { test: "test" },
 						projection: { firstName: 1 },
+						skip: 0,
+						limit: 10,
 					});
-					return result?.firstName;
 				},
 			},
-			lastName: {
-				type: new GraphQLNonNull(GraphQLString),
+			otherFriends: {
+				type: new GraphQLList(GraphQLString),
 				async resolve() {
-					const result = await loader.load({
+					return loader.loadMany({
 						query: { test: "test" },
 						projection: { lastName: 1 },
+						skip: 5,
+						limit: 15,
 					});
-					return result?.lastName;
 				},
 			},
 		}),
@@ -70,19 +78,19 @@ test("should aggregate same queries projections", async () => {
 		source: `
       {
         person {
-          firstName
-          lastName
+          friends
+          otherFriends
         }
       }
     `,
 	});
 
-	expect(collection.findOne).toHaveBeenCalledOnce();
+	expect(collection.find).toHaveBeenCalledOnce();
 
 	expect(errors).toBe(undefined);
 
 	expect(data!.person).toMatchObject({
-		firstName: "Mario",
-		lastName: "Rossi",
+		friends: ["Mario", "Luigi"],
+		otherFriends: ["Mario", "Luigi"],
 	});
 });
