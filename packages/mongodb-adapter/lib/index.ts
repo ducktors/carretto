@@ -1,2 +1,2 @@
-export { mergeProjection } from './merge-projection'
-export type { Projection } from './projection'
+export { DataloaderMongoDB } from './dataloader-mongodb'
+export type { Key } from './key'
