@@ -1,5 +1,13 @@
 # @carretto/mongodb
 
+## 0.0.8
+
+### Patch Changes
+
+- 1b33157: onLoad hook and refactor
+- Updated dependencies [1b33157]
+  - @carretto/main-loader@0.1.0
+
 ## 0.0.7
 
 ### Patch Changes

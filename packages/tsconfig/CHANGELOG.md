@@ -1,5 +1,11 @@
 # @carretto/tsconfig
 
+## 0.0.5
+
+### Patch Changes
+
+- 1b33157: onLoad hook and refactor
+
 ## 0.0.4
 
 ### Patch Changes

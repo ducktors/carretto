@@ -1,5 +1,11 @@
 # @carretto/main-loader
 
+## 0.1.0
+
+### Minor Changes
+
+- 1b33157: onLoad hook and refactor
+
 ## 0.0.6
 
 ### Patch Changes
