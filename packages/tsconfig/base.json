@@ -23,7 +23,7 @@
     "useDefineForClassFields": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
-    "declarationMap": true,
+    "declarationMap": false,
     "declaration": true,
     "lib": [
       "esnext"
