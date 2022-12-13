@@ -17,8 +17,8 @@ export abstract class MainLoader<T, Q extends object, P> {
 		);
 	}
 
-	public load(key: Key<Q, P>) {
-		return this.loader.load(key);
+	public async load(key: Key<Q, P>) {
+		return this.loader.load(key).then(() => this.onLoad(key));
 	}
 
 	protected async batchLoadFn(keys: readonly Key<Q, P>[]) {
@@ -39,6 +39,8 @@ export abstract class MainLoader<T, Q extends object, P> {
 	protected cacheKeyFn(key: Key<Q, P>) {
 		return hash(key);
 	}
+
+	protected onLoad(key: Key<Q, P>) {}
 
 	protected abstract execute(key: Key<Q, P>): Promise<T | T[] | null>;
 	protected abstract mergeProjection: MergeProjectionFn<P, P>;
