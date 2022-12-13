@@ -5,14 +5,14 @@ importers:
   .:
     specifiers:
       '@changesets/cli': ^2.25.2
-      rome: ^10.0.1
+      rome: 10.0.4-beta
       turbo: ^1.6.3
       typescript: ^4.8.4
       vitest: ^0.25.1
     dependencies:
       '@changesets/cli': 2.25.2
     devDependencies:
-      rome: 10.0.1
+      rome: 10.0.4-beta
       turbo: 1.6.3
       typescript: 4.9.3
       vitest: 0.25.3
@@ -1125,54 +1125,6 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.14.0
     dev: false
-
-  /@rometools/cli-darwin-arm64/10.0.1:
-    resolution: {integrity: sha512-MwQjk3uhZrCu6LgIwJHREAsVt/mUQTGv7p8iosfaF8lCIxMVjyS+akbF/QcBufyW5sFtHYNWUEe/uKPHK4E//A==}
-    cpu: [arm64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@rometools/cli-darwin-x64/10.0.1:
-    resolution: {integrity: sha512-n010Wc/z9L8wRkRnR5boMhdWgDVGrTG/i7zL8u/3+F5aSUgLCywf9F/b3ex74tCJJfcwBLlhaAqAVQX6U1bIkA==}
-    cpu: [x64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@rometools/cli-linux-arm64/10.0.1:
-    resolution: {integrity: sha512-JljZsnud1KCfe36VNsVh/LrYdAzgbKbcsCTzeCjW9ROkMyNj8pmQ/gIUFxZ+PyhMFgowHIDGihoNf4m+pgpxkA==}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@rometools/cli-linux-x64/10.0.1:
-    resolution: {integrity: sha512-jXIqd9iDyZUexk63CRfAXDA4zNDUHpErUmCejjGab3dhDt1KA40fDqKb+kxZpAhY3tQoWNSNQyo750zX5NawLw==}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@rometools/cli-win32-arm64/10.0.1:
-    resolution: {integrity: sha512-G/toRrKPhhi7SMYMyROq/E2c8/4xRX/67vFhVihuMvDDzhanIb99hEt5MMbM4HbYK1nnZBPyLN6LxVsxm9M9hA==}
-    cpu: [arm64]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@rometools/cli-win32-x64/10.0.1:
-    resolution: {integrity: sha512-y299+VGoBufZntZj0Xz7w9DODU+6E5giXStfBDoa0fspXGNkYyYfD+HC6j9gUv4zpMZJ607XVvVHjpfwM/3ftA==}
-    cpu: [x64]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
 
   /@types/chai-subset/1.3.3:
     resolution: {integrity: sha512-frBecisrNGz+F4T6bcc+NLeolfiojh5FxW2klu669+8BARtyQv2C/GkNW6FUodVe4BroGMP/wER/YDGc7rEllw==}
@@ -2644,18 +2596,11 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /rome/10.0.1:
-    resolution: {integrity: sha512-RfaDa+cSustBsjX6bj3fWqEhoNxXrK1uNgKHpkCHAqp20QMJXnCRtbokhirNMe0utyGI9GTO/sDoK7hJP7O8Bw==}
-    engines: {node: '>=14.*'}
+  /rome/10.0.4-beta:
+    resolution: {integrity: sha512-wDD/ZdImSt7Cg1/u3TxIBjIs56tEhPmXV/Rry1nExV+RogaLaF1IXTUbYNXDFzXBk9fEg+gnBovkY4WN/f41WQ==}
+    engines: {node: '>=12.8.1'}
     hasBin: true
     requiresBuild: true
-    optionalDependencies:
-      '@rometools/cli-darwin-arm64': 10.0.1
-      '@rometools/cli-darwin-x64': 10.0.1
-      '@rometools/cli-linux-arm64': 10.0.1
-      '@rometools/cli-linux-x64': 10.0.1
-      '@rometools/cli-win32-arm64': 10.0.1
-      '@rometools/cli-win32-x64': 10.0.1
     dev: true
 
   /run-parallel/1.2.0:
