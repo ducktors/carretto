@@ -7,7 +7,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc --build",
-    "test": "vitest run --dir=test"
+    "test": "vitest run --dir=test",
+    "coverage": "vitest run --coverage"
   },
   "keywords": [],
   "author": "Alessandro Magionami - @alemagio",
@@ -17,11 +18,12 @@
     "tslib": "^2.4.1"
   },
   "devDependencies": {
+    "@carretto/tsconfig": "workspace:*",
     "@types/object-hash": "^2.2.1",
+    "@vitest/coverage-c8": "^0.25.8",
     "dataloader": "^2.1.0",
     "graphql": "^16.6.0",
-    "mongodb": "^4.11.0",
-    "@carretto/tsconfig": "workspace:*"
+    "mongodb": "^4.11.0"
   },
   "peerDependencies": {
     "dataloader": "^2.1.0",

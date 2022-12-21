@@ -2,13 +2,12 @@ import { expect, test, vi } from "vitest";
 import {
 	graphql,
 	GraphQLList,
-	GraphQLNonNull,
 	GraphQLObjectType,
 	GraphQLSchema,
 	GraphQLString,
 } from "graphql";
 
-import { DataloaderMongoDB } from "../dist";
+import { DataloaderMongoDB } from "../lib";
 
 test("should aggregate same queries projections and skip and limit", async () => {
 	const collection = {

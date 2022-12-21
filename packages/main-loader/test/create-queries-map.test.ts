@@ -3,7 +3,6 @@ import { expect, test } from "vitest";
 import { hash } from "../lib/hash";
 import { Key } from "../lib/key";
 import { createQueriesMapFactory } from "../lib/create-queries-map-factory";
-import { MergeProjectionFn } from "../dist";
 
 const createQueriesMap = createQueriesMapFactory((previousValue: object, currentValue: object) => ({ ...previousValue, ...currentValue }))
 

@@ -1,0 +1,11 @@
+import { defineConfig } from 'vitest/config'
+
+export default defineConfig({
+  test: {
+    dir: 'test',
+    coverage: {
+      provider: 'c8',
+      reporter: ['html', 'text', 'json']
+    },
+  },
+})

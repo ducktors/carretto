@@ -8,7 +8,7 @@ import {
 	GraphQLString,
 } from "graphql";
 
-import { DataloaderMongoDB } from "..";
+import { DataloaderMongoDB } from "../lib";
 
 test("should aggregate same queries projections", async () => {
 	const collection = {

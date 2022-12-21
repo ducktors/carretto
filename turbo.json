@@ -10,6 +10,13 @@
         "^build"
       ],
       "cache": false
+    },
+    "coverage": {
+      "outputs": [],
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true
     }
   }
 }
