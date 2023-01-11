@@ -1,0 +1,34 @@
+{
+  "name": "@carretto/http",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Http adapter for Carretto dataloader",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --build",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage"
+  },
+  "keywords": [],
+  "author": "Alessandro Magionami - @alemagio",
+  "license": "MIT",
+  "dependencies": {
+    "@carretto/main-loader": "workspace:*",
+    "tslib": "^2.4.1"
+  },
+  "devDependencies": {
+    "@carretto/tsconfig": "workspace:*",
+    "@types/node": "^18.11.18",
+    "@vitest/coverage-c8": "^0.25.8",
+    "graphql": "^16.6.0",
+    "undici": "^5.14.0"
+  },
+  "peerDependencies": {
+    "dataloader": "^2.1.0",
+    "undici": "^5.0.0"
+  },
+  "files": [
+    "dist"
+  ]
+}

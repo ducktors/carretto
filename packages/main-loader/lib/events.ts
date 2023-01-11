@@ -1,6 +1,6 @@
 export const Events = {
-  LoadStarted: 'carretto_load_started',
-  LoadError: 'carretto_load_error',
+  LoadStarted: 'carretto-load:started',
+  LoadError: 'carretto-load:error',
 }
 
 export type Events = typeof Events
