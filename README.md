@@ -32,7 +32,7 @@ Multiple calls to resources identified with keys having the same `query` field w
 
 When trying to access resources identified with keys having the same `query` field, the resulted projection will be a merge of the projections of the single keys.
 
-For an example of this behavior see [mongodb-adapter](./packages/mongodb/README.md/#projection).
+For an example of this behavior see [mongodb](./packages/mongodb/README.md).
 
 ### Skip and Limit
 
