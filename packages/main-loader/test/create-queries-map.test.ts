@@ -4,10 +4,10 @@ import { hash } from "../lib/hash";
 import { Key } from "../lib/key";
 import { createQueriesMapFactory } from "../lib/create-queries-map-factory";
 
-const createQueriesMap = createQueriesMapFactory((previousValue: object, currentValue: object) => ({ ...previousValue, ...currentValue }))
+const createQueriesMap = createQueriesMapFactory()
 
 test("should return a map of keys with query as key", () => {
-	const keys: Key<any, any>[] = [
+	const keys: Key<any>[] = [
 		{ query: "query1", projection: { firstName: 1 } },
 		{ query: "query2", projection: { lastName: 1 } },
 	];
@@ -17,7 +17,7 @@ test("should return a map of keys with query as key", () => {
 });
 
 test("should return a map of keys with query as key and merged projections for same query", () => {
-	const keys: Key<any, any>[] = [
+	const keys: Key<any>[] = [
 		{ query: "query", projection: { firstName: 1 } },
 		{ query: "query", projection: { lastName: 1 } },
 	];
@@ -35,7 +35,7 @@ test("should return a map of keys with query as key and merged projections for s
 });
 
 test("should return a map of keys with query as key and min of skip and max of limit", () => {
-	const keys: Key<any, any>[] = [
+	const keys: Key<any>[] = [
 		{ query: "query", projection: {}, skip: 1, limit: 10 },
 		{ query: "query", projection: {}, skip: 2, limit: 15 },
 	];
@@ -55,7 +55,7 @@ test("should return a map of keys with query as key and min of skip and max of l
 });
 
 test("should leave limit -1 unchanged", () => {
-	const keys: Key<any, any>[] = [
+	const keys: Key<any>[] = [
 		{ query: "query", projection: {}, skip: 1, limit: -1 },
 		{ query: "query", projection: {}, skip: 2, limit: 15 },
 	];

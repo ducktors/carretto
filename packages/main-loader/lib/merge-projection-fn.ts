@@ -1,1 +1,0 @@
-export type MergeProjectionFn<P, C> = (previousValue: P, currentValue: C) => P & C

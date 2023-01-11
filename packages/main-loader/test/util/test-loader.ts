@@ -1,16 +1,14 @@
 import { Key, MainLoader } from '../../'
 
-export class TestLoader extends MainLoader<void, object, object> {
-	public spy: (key: Key<any, any>) => Promise<void>;
+export class TestLoader extends MainLoader<void, object> {
+	public spy: (key: Key<any>) => Promise<void>;
 
-	constructor(spy: (key: Key<any, any>) => Promise<void>) {
+	constructor(spy: (key: Key<any>) => Promise<void>) {
 		super()
 		this.spy = spy
 	}
 
-	protected execute(key: Key<any, any>) {
+	protected execute(key: Key<any>) {
     return this.spy(key)
 	}
-
-	protected mergeProjection = (previousValue: object, currentValue: object) => ({ ...previousValue, ...currentValue })
 }

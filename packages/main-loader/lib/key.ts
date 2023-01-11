@@ -1,6 +1,8 @@
-export interface Key<Q extends object, P> {
+import { Projection } from "./projection";
+
+export interface Key<Q extends object> {
 	query: Q;
-	projection: P;
+	projection: Projection;
 	skip?: number;
 	limit?: number;
 }

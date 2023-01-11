@@ -1,9 +1,8 @@
 import { hash } from "./hash";
 import { Key } from "./key";
-import type { MergeProjectionFn } from "./merge-projection-fn";
 
-export const createQueriesMapFactory = <Q extends object, P>(mergeProjection: MergeProjectionFn<P, P>) => (keys: readonly Key<Q, P>[]) => {
-	const queriesMap = new Map<string, Key<Q, P>>();
+export const createQueriesMapFactory = <Q extends object>() => (keys: readonly Key<Q>[]) => {
+	const queriesMap = new Map<string, Key<Q>>();
 	for (const key of keys) {
 		const queryHash = hash(key.query);
 
@@ -13,9 +12,9 @@ export const createQueriesMapFactory = <Q extends object, P>(mergeProjection: Me
 			continue;
 		}
 
-		const newMappedKey: Key<Q, P> = {
+		const newMappedKey: Key<Q> = {
 			query: key.query,
-			projection: mergeProjection(queriesMap.get(queryHash)!.projection, key.projection),
+			projection: { ...queriesMap.get(queryHash)!.projection, ...key.projection },
 		};
 		if (key.skip) {
 			newMappedKey.skip = Math.min(key.skip ?? 0, mappedKey.skip ?? 0);
