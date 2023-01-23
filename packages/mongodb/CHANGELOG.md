@@ -1,5 +1,15 @@
 # @carretto/mongodb
 
+## 0.0.12
+
+### Patch Changes
+
+- b707f3d: refactor and default skip and limit fix
+- 01d49a5: make skip and limit optional with default
+- Updated dependencies [b707f3d]
+- Updated dependencies [01d49a5]
+  - @carretto/main-loader@0.2.3
+
 ## 0.0.11
 
 ### Patch Changes

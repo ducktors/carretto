@@ -1,5 +1,12 @@
 # @carretto/main-loader
 
+## 0.2.3
+
+### Patch Changes
+
+- b707f3d: refactor and default skip and limit fix
+- 01d49a5: make skip and limit optional with default
+
 ## 0.2.2
 
 ### Patch Changes
