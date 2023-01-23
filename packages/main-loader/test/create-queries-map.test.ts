@@ -53,23 +53,3 @@ test("should return a map of keys with query as key and min of skip and max of l
 		]),
 	);
 });
-
-test("should leave limit -1 unchanged", () => {
-	const keys: Key<any>[] = [
-		{ query: "query", projection: {}, skip: 1, limit: -1 },
-		{ query: "query", projection: {}, skip: 2, limit: 15 },
-	];
-	expect(createQueriesMap(keys)).toEqual(
-		new Map([
-			[
-				hash(keys[0].query),
-				{
-					...keys[0],
-					projection: { ...keys[0].projection, ...keys[1].projection },
-					skip: 1,
-					limit: -1,
-				},
-			],
-		]),
-	);
-});

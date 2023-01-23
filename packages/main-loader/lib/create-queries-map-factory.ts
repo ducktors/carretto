@@ -1,5 +1,7 @@
 import { hash } from "./hash";
 import { Key } from "./key";
+import { updateKeyLimit } from "./update-key-limit";
+import { updateKeySkip } from "./update-key-skip";
 
 export const createQueriesMapFactory = <Q extends object>() => (keys: readonly Key<Q>[]) => {
 	const queriesMap = new Map<string, Key<Q>>();
@@ -16,16 +18,12 @@ export const createQueriesMapFactory = <Q extends object>() => (keys: readonly K
 			query: key.query,
 			projection: { ...queriesMap.get(queryHash)!.projection, ...key.projection },
 		};
-		if (key.skip) {
-			newMappedKey.skip = Math.min(key.skip ?? 0, mappedKey.skip ?? 0);
+
+		if (Object.hasOwn(key, 'skip')) {
+			newMappedKey.skip = updateKeySkip(mappedKey, key)
 		}
-		if (key.limit) {
-			if (key.limit === -1 || mappedKey.limit === -1) {
-				newMappedKey.limit = -1;
-				queriesMap.set(queryHash, newMappedKey);
-				continue;
-			}
-			newMappedKey.limit = Math.max(key.limit ?? -1, mappedKey.limit ?? -1);
+		if (Object.hasOwn(key, 'limit')) {
+			newMappedKey.limit = updateKeyLimit(mappedKey, key)
 		}
 
 		queriesMap.set(queryHash, newMappedKey);

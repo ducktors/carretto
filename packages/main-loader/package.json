@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc --build",
-    "test": "vitest run --dir=test",
+    "test": "tsc --build && vitest run --dir=test",
     "coverage": "vitest run --coverage"
   },
   "keywords": [],
