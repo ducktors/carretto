@@ -17,8 +17,8 @@ export class DataloaderMongoDB<T extends WithId<Document>> extends MainLoader<T,
 			? this.collection
 						.find<T>(key.query, {
 							projection: key.projection,
-							limit: key.limit ?? -1,
-							skip: key.skip ?? 0,
+							limit: key.limit,
+							skip: key.skip,
 						})
 						.toArray()
 			: this.collection.findOne<T>(key.query, { projection: key.projection });

@@ -21,19 +21,9 @@ export abstract class MainLoader<T, Q extends object> {
 		return this.loader.load(key)
 	}
 
-	public async loadMany(key: Required<Key<Q>>): Promise<T[]> {
-		if (!Object.hasOwn(key, 'skip')) {
-			const error = new Error('Missing "skip" property in key')
-			this.onError(error, key)
-			throw error
-		}
-		if (!Object.hasOwn(key, 'limit')) {
-			const error = new Error('Missing "limit" property in key')
-			this.onError(error, key)
-			throw error
-		}
+	public async loadMany(key: Key<Q>): Promise<T[]> {
 		this.onLoad(key)
-		return this.loader.load(key) as Promise<T[]>
+		return this.loader.load({ skip: 0, limit: -1, ...key }) as Promise<T[]>
 	}
 
 	protected async batchLoadFn(keys: readonly Key<Q>[]) {
