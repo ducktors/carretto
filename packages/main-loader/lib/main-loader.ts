@@ -21,7 +21,17 @@ export abstract class MainLoader<T, Q extends object> {
 		return this.loader.load(key)
 	}
 
-	public async loadMany(key: Key<Q>): Promise<T[]> {
+	public async loadMany(key: Required<Key<Q>>): Promise<T[]> {
+		if (!Object.hasOwn(key, 'skip')) {
+			const error = new Error('Missing "skip" property in key')
+			this.onError(error, key)
+			throw error
+		}
+		if (!Object.hasOwn(key, 'limit')) {
+			const error = new Error('Missing "limit" property in key')
+			this.onError(error, key)
+			throw error
+		}
 		this.onLoad(key)
 		return this.loader.load(key) as Promise<T[]>
 	}
