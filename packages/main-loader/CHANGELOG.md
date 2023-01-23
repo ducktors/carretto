@@ -1,5 +1,11 @@
 # @carretto/main-loader
 
+## 0.2.2
+
+### Patch Changes
+
+- 32d01f0: make skip and limit required in loadMany
+
 ## 0.2.1
 
 ### Patch Changes

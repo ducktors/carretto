@@ -1,5 +1,13 @@
 # @carretto/http
 
+## 0.0.3
+
+### Patch Changes
+
+- 32d01f0: make skip and limit required in loadMany
+- Updated dependencies [32d01f0]
+  - @carretto/main-loader@0.2.2
+
 ## 0.0.2
 
 ### Patch Changes
