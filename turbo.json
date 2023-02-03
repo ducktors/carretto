@@ -4,6 +4,13 @@
     "build": {
       "outputs": []
     },
+    "publish": {
+      "outputs": [],
+      "cache": false,
+      "dependsOn": [
+        "^build"
+      ]
+    },
     "lint": {
       "outputs": [],
       "cache": false,
