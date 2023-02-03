@@ -52,7 +52,7 @@ jobs:
         id: changesets
         uses: changesets/action@v1.4.1
         with:
-          publish: pnpm publish
+          publish: pnpm build && pnpm publish -r --access=public
           commit: "chore(release): update monorepo packages versions"
           title: "Upcoming Release Changes"
         env:
