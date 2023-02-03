@@ -10,6 +10,8 @@
 
 `Carretto` is a set of utilities to improve and simplify the usage of [dataloader](https://github.com/graphql/dataloader).
 
+[![CI](https://github.com/ducktors/carretto/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ducktors/carretto/actions/workflows/ci.yml) [![Coverage Status](https://coveralls.io/repos/github/ducktors/carretto/badge.svg)](https://coveralls.io/github/ducktors/carretto) [![Maintainability](https://api.codeclimate.com/v1/badges/1099ccb45fa45a4d0507/maintainability)](https://codeclimate.com/github/ducktors/carretto/maintainability)
+
 ## Introduction
 
 `Carretto` has the concept of `key` which is an object having the following shape:
