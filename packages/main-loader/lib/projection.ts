@@ -1,1 +1,1 @@
-export type Projection = { [k: string]: 1 }
+export type Projection = { [k: string]: 1 };

@@ -1,5 +1,5 @@
-import { Filter } from 'mongodb'
+import { Filter } from 'mongodb';
 
-import { Key as MainLoaderKey } from '@carretto/main-loader'
+import { Key as MainLoaderKey } from '@carretto/main-loader';
 
-export type Key<T> = MainLoaderKey<Filter<T>>
+export type Key<T> = MainLoaderKey<Filter<T>>;

@@ -1,2 +1,2 @@
-export { DataloaderMongoDB } from './dataloader-mongodb'
-export type { Key } from './key'
+export { DataloaderMongoDB } from './dataloader-mongodb';
+export type { Key } from './key';

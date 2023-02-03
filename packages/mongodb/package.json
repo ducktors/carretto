@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc --build",
     "test": "tsc && vitest run",
-    "coverage": "vitest run --coverage"
+    "test:ci": "vitest run --coverage --silent"
   },
   "keywords": [],
   "author": "Alessandro Magionami - @alemagio",
