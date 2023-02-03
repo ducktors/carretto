@@ -8,9 +8,12 @@
 
 ![chariot_full_of_barrels_covered_by_a_cloath_pulled_by_a_e402c499-fc99-412b-b57a-024e6377974d](https://user-images.githubusercontent.com/1620916/216587459-568a3504-7998-4979-952c-e75fd03440b9.png)
 
-`Carretto` is a set of utilities to improve and simplify the usage of [dataloader](https://github.com/graphql/dataloader).
+[![CI](https://github.com/ducktors/carretto/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ducktors/carretto/actions/workflows/ci.yml) [![Coverage Status](https://coveralls.io/repos/github/ducktors/carretto/badge.svg)](https://coveralls.io/github/ducktors/carretto) [![Maintainability](https://api.codeclimate.com/v1/badges/1099ccb45fa45a4d0507/maintainability)](https://codeclimate.com/github/ducktors/carretto/maintainability) 
+[![main-loader](https://img.shields.io/npm/v/@carretto/main-loader?label=main-loader)](https://www.npmjs.com/package/@carretto/main-loader)
+[![mongodb](https://img.shields.io/npm/v/@carretto/mongodb?label=mongodb)](https://www.npmjs.com/package/@carretto/mongodb)
+[![http](https://img.shields.io/npm/v/@carretto/http?label=http)](https://www.npmjs.com/package/@carretto/http)
 
-[![CI](https://github.com/ducktors/carretto/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ducktors/carretto/actions/workflows/ci.yml) [![Coverage Status](https://coveralls.io/repos/github/ducktors/carretto/badge.svg)](https://coveralls.io/github/ducktors/carretto) [![Maintainability](https://api.codeclimate.com/v1/badges/1099ccb45fa45a4d0507/maintainability)](https://codeclimate.com/github/ducktors/carretto/maintainability)
+`Carretto` is a set of utilities to improve and simplify the usage of [dataloader](https://github.com/graphql/dataloader).
 
 ## Introduction
 
