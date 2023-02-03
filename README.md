@@ -1,4 +1,12 @@
-# Carretto
+---
+
+<p align="center">
+ <img align="center" alt="CRRETTO" src="https://user-images.githubusercontent.com/1620916/216588133-2ebcacd8-0ede-4b01-a863-cffdd0e041c6.png">
+</p>
+
+---
+
+![chariot_full_of_barrels_covered_by_a_cloath_pulled_by_a_e402c499-fc99-412b-b57a-024e6377974d](https://user-images.githubusercontent.com/1620916/216587459-568a3504-7998-4979-952c-e75fd03440b9.png)
 
 `Carretto` is a set of utilities to improve and simplify the usage of [dataloader](https://github.com/graphql/dataloader).
 
