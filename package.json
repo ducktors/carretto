@@ -7,7 +7,7 @@
     "build": "pnpm turbo build --color",
     "test": "turbo run test",
     "preinstall": "npx only-allow pnpm",
-    "release": "pnpm publish -r --access=public",
+    "release": "pnpm publish -r --access=public --no-git-checks",
     "precommit": "pnpm install",
     "lint": "rome check .",
     "format": "rome format --write .",
