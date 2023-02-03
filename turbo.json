@@ -4,6 +4,13 @@
     "build": {
       "outputs": []
     },
+    "lint": {
+      "outputs": [],
+      "cache": false,
+      "dependsOn": [
+        "^build"
+      ]
+    },
     "test": {
       "outputs": [],
       "dependsOn": [
@@ -11,12 +18,12 @@
       ],
       "cache": false
     },
-    "coverage": {
+    "test:ci": {
       "outputs": [],
+      "cache": false,
       "dependsOn": [
         "^build"
-      ],
-      "cache": true
+      ]
     }
   }
 }

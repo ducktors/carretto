@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc --build",
     "test": "vitest run",
-    "coverage": "vitest run --coverage"
+    "test:ci": "vitest run --coverage --silent"
   },
   "keywords": [],
   "author": "Alessandro Magionami - @alemagio",
@@ -20,7 +20,7 @@
   "devDependencies": {
     "@carretto/tsconfig": "workspace:*",
     "@types/node": "^18.11.18",
-    "@vitest/coverage-c8": "^0.25.8",
+    "@vitest/coverage-istanbul": "^0.27.3",
     "graphql": "^16.6.0",
     "undici": "^5.14.0"
   },
