@@ -31,6 +31,13 @@
       "dependsOn": [
         "^build"
       ]
+    },
+    "unit": {
+      "outputs": [],
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": false
     }
   }
 }

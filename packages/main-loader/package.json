@@ -8,18 +8,21 @@
   "scripts": {
     "build": "tsc --build",
     "check:types": "tsc --noEmit",
-    "test": "pnpm check:types && vitest run --dir=test",
-    "test:ci": "vitest run --coverage --silent"
+    "test": "pnpm check:types && pnpm unit",
+    "test:ci": "vitest run --coverage --silent",
+    "unit": "vitest run"
   },
   "keywords": [],
   "author": "Alessandro Magionami - @alemagio",
   "license": "MIT",
   "dependencies": {
+    "dot-object": "^2.1.4",
     "object-hash": "^3.0.0",
     "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@ducktors/tsconfig": "^0.1.1",
+    "@types/dot-object": "^2.1.2",
     "@types/object-hash": "^2.2.1",
     "@vitest/coverage-istanbul": "^0.27.3",
     "dataloader": "^2.1.0",
