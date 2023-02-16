@@ -1,5 +1,6 @@
 import { hash } from './hash';
 import { Key } from './key';
+import { mergeProjections } from './merge-projections';
 import { updateKeyLimit } from './update-key-limit';
 import { updateKeySkip } from './update-key-skip';
 
@@ -18,7 +19,7 @@ export const createQueriesMapFactory =
 
       const newMappedKey: Key<Q> = {
         query: key.query,
-        projection: { ...queriesMap.get(queryHash)!.projection, ...key.projection },
+        projection: mergeProjections(queriesMap.get(queryHash)!.projection, key.projection),
       };
 
       if (Object.hasOwn(key, 'skip')) {
