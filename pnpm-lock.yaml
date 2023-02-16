@@ -27,7 +27,7 @@ importers:
   packages/http:
     specifiers:
       '@carretto/main-loader': workspace:*
-      '@carretto/tsconfig': workspace:*
+      '@ducktors/tsconfig': ^0.1.1
       '@types/node': ^18.11.18
       '@vitest/coverage-istanbul': ^0.27.3
       graphql: ^16.6.0
@@ -37,7 +37,7 @@ importers:
       '@carretto/main-loader': link:../main-loader
       tslib: 2.4.1
     devDependencies:
-      '@carretto/tsconfig': link:../tsconfig
+      '@ducktors/tsconfig': 0.1.1
       '@types/node': 18.11.18
       '@vitest/coverage-istanbul': 0.27.3
       graphql: 16.6.0
@@ -45,7 +45,7 @@ importers:
 
   packages/main-loader:
     specifiers:
-      '@carretto/tsconfig': workspace:*
+      '@ducktors/tsconfig': ^0.1.1
       '@types/object-hash': ^2.2.1
       '@vitest/coverage-istanbul': ^0.27.3
       dataloader: ^2.1.0
@@ -57,7 +57,7 @@ importers:
       object-hash: 3.0.0
       tslib: 2.4.1
     devDependencies:
-      '@carretto/tsconfig': link:../tsconfig
+      '@ducktors/tsconfig': 0.1.1
       '@types/object-hash': 2.2.1
       '@vitest/coverage-istanbul': 0.27.3
       dataloader: 2.1.0
@@ -67,7 +67,7 @@ importers:
   packages/mongodb:
     specifiers:
       '@carretto/main-loader': workspace:*
-      '@carretto/tsconfig': workspace:*
+      '@ducktors/tsconfig': ^0.1.1
       '@vitest/coverage-istanbul': ^0.27.3
       graphql: ^16.6.0
       mongodb: ^4.11.0
@@ -76,13 +76,10 @@ importers:
       '@carretto/main-loader': link:../main-loader
       tslib: 2.4.1
     devDependencies:
-      '@carretto/tsconfig': link:../tsconfig
+      '@ducktors/tsconfig': 0.1.1
       '@vitest/coverage-istanbul': 0.27.3
       graphql: 16.6.0
       mongodb: 4.12.1
-
-  packages/tsconfig:
-    specifiers: {}
 
 packages:
 
@@ -1296,6 +1293,12 @@ packages:
       fs-extra: 7.0.1
       human-id: 1.0.2
       prettier: 2.8.0
+    dev: true
+
+  /@ducktors/tsconfig/0.1.1:
+    resolution: {integrity: sha512-ulzGFJSV46tCqQjyJoMkC7TfIyGRsJZk21wEe36nD4Zo0GIbBSbsgJU54c6R8Ik8a4T2jR8pQSeJptsRPPGtiQ==}
+    peerDependencies:
+      typescript: ^4.9.5
     dev: true
 
   /@esbuild/android-arm/0.15.16:

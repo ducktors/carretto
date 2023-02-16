@@ -7,7 +7,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc --build",
-    "test": "vitest run",
+    "check:types": "tsc --noEmit",
+    "test": "pnpm check:types && vitest run",
     "test:ci": "vitest run --coverage --silent"
   },
   "keywords": [],
@@ -18,7 +19,7 @@
     "tslib": "^2.4.1"
   },
   "devDependencies": {
-    "@carretto/tsconfig": "workspace:*",
+    "@ducktors/tsconfig": "^0.1.1",
     "@types/node": "^18.11.18",
     "@vitest/coverage-istanbul": "^0.27.3",
     "graphql": "^16.6.0",
