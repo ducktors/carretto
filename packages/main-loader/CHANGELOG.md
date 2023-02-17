@@ -1,5 +1,11 @@
 # @carretto/main-loader
 
+## 0.3.1
+
+### Patch Changes
+
+- 13ab083: add generic to load and loadMany, change limit to 0 instead of -1
+
 ## 0.3.0
 
 ### Minor Changes
