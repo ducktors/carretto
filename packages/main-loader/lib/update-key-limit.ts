@@ -1,6 +1,6 @@
 import { Key } from './key';
 
-export function updateKeyLimit<Q extends object>(previous: Key<Q>, current: Key<Q>) {
+export function updateKeyLimit<Q extends Record<string, any>>(previous: Key<Q>, current: Key<Q>) {
   if (!(previous.limit && current.limit) || previous.limit === 0 || current.limit === 0) {
     return 0;
   }
