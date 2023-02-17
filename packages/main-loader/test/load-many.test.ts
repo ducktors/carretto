@@ -69,7 +69,7 @@ test('should use default skip and limit', async () => {
     query: { test: 'test' },
     projection: { firstName: 1, lastName: 1 },
     skip: 0,
-    limit: -1,
+    limit: 0,
   });
 });
 

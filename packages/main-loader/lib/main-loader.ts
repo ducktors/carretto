@@ -23,7 +23,7 @@ export abstract class MainLoader<T, Q extends object> {
 
   public async loadMany(key: Key<Q>): Promise<T[]> {
     this.onLoad(key);
-    return this.loader.load({ skip: 0, limit: -1, ...key }) as Promise<T[]>;
+    return this.loader.load({ skip: 0, limit: 0, ...key }) as Promise<T[]>;
   }
 
   protected async batchLoadFn(keys: readonly Key<Q>[]) {
