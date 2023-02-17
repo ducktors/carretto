@@ -1,5 +1,12 @@
 # @carretto/http
 
+## 0.1.1
+
+### Patch Changes
+
+- Updated dependencies [13ab083]
+  - @carretto/main-loader@0.3.1
+
 ## 0.1.0
 
 ### Minor Changes
