@@ -1,5 +1,11 @@
 # @carretto/main-loader
 
+## 0.3.0
+
+### Minor Changes
+
+- 83950b3: support hierarchical projections and fix CI tests
+
 ## 0.2.3
 
 ### Patch Changes
