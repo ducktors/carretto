@@ -10,7 +10,7 @@ export class DataloaderHttp<T> extends MainLoader<T, URL> {
     const { body } = await request(
       `${key.query}?${stringify({ projection: Object.keys(key.projection) })}&skip=${
         key.skip ?? 0
-      }&limit=${key.limit ?? -1}`,
+      }&limit=${key.limit ?? 0}`,
       { method: 'GET' },
     );
     return body.json() as Promise<T | T[] | null>;

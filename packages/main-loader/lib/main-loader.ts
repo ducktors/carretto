@@ -4,7 +4,7 @@ import { hash } from './hash';
 import type { Key } from './key';
 import { createQueriesMapFactory } from './create-queries-map-factory';
 
-export abstract class MainLoader<T, Q extends object> {
+export abstract class MainLoader<T, Q extends Record<string, any>> {
   protected loader: DataLoader<Key<Q>, T>;
 
   constructor() {
@@ -16,14 +16,14 @@ export abstract class MainLoader<T, Q extends object> {
     );
   }
 
-  public async load(key: Key<Q>): Promise<T | null> {
+  public async load<U extends T = T>(key: Key<Q>): Promise<U | null> {
     this.onLoad(key);
-    return this.loader.load(key);
+    return this.loader.load(key) as Promise<U | null>;
   }
 
-  public async loadMany(key: Key<Q>): Promise<T[]> {
+  public async loadMany<U extends T = T>(key: Key<Q>): Promise<U[]> {
     this.onLoad(key);
-    return this.loader.load({ skip: 0, limit: -1, ...key }) as Promise<T[]>;
+    return this.loader.load({ skip: 0, limit: 0, ...key }) as Promise<U[]>;
   }
 
   protected async batchLoadFn(keys: readonly Key<Q>[]) {

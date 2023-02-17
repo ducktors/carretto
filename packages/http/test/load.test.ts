@@ -13,7 +13,7 @@ const url = 'http://localhost:3000';
 test('should aggregate same queries projections', async () => {
   vi.mocked(request).mockImplementationOnce((input: string) => {
     expect(input).toBe(
-      `${url}/?${stringify({ projection: ['firstName', 'lastName'] })}&skip=0&limit=-1`,
+      `${url}/?${stringify({ projection: ['firstName', 'lastName'] })}&skip=0&limit=0`,
     );
     return Promise.resolve({ body: { json: () => ({ firstName: 'Mario', lastName: 'Rossi' }) } });
   });

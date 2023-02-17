@@ -57,7 +57,7 @@ test('should return 0 if current has skip=0', () => {
     query: { name: 'query2' },
     projection: { lastName: 1 },
     skip: 0,
-    limit: -1,
+    limit: 0,
   };
 
   expect(updateKeySkip(previous, current)).toBe(0);
