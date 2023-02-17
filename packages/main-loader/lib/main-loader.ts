@@ -4,7 +4,7 @@ import { hash } from './hash';
 import type { Key } from './key';
 import { createQueriesMapFactory } from './create-queries-map-factory';
 
-export abstract class MainLoader<T, Q extends Record<string, any>> {
+export abstract class MainLoader<T, Q extends object> {
   protected loader: DataLoader<Key<Q>, T>;
 
   constructor() {
