@@ -1,5 +1,16 @@
 # @carretto/mongodb
 
+## 0.1.0
+
+### Minor Changes
+
+- 83950b3: support hierarchical projections and fix CI tests
+
+### Patch Changes
+
+- Updated dependencies [83950b3]
+  - @carretto/main-loader@0.3.0
+
 ## 0.0.12
 
 ### Patch Changes
