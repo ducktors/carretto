@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc --build",
+    "build": "rimraf dist && tsc --build",
     "check:types": "tsc --noEmit",
     "test": "pnpm check:types && vitest run",
     "test:ci": "vitest run --coverage --silent"
@@ -22,7 +22,8 @@
     "@ducktors/tsconfig": "^0.1.1",
     "@vitest/coverage-istanbul": "^0.27.3",
     "graphql": "^16.6.0",
-    "mongodb": "^4.11.0"
+    "mongodb": "^4.11.0",
+    "rimraf": "^4.1.2"
   },
   "peerDependencies": {
     "dataloader": "^2.1.0",
