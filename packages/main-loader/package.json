@@ -5,7 +5,13 @@
   "description": "A dataloader implementation with adapters",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "exports": "./index.ts",
+  "exports": {
+    ".": {
+        "import": "./dist/index.js",
+        "require": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+    }
+},
   "scripts": {
     "build": "tsc --build",
     "check:types": "tsc --noEmit",
