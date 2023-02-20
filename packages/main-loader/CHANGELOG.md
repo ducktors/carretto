@@ -1,5 +1,11 @@
 # @carretto/main-loader
 
+## 0.3.2
+
+### Patch Changes
+
+- 7f26a46: Revert type for query
+
 ## 0.3.1
 
 ### Patch Changes
