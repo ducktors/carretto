@@ -5,7 +5,7 @@ import { updateKeyLimit } from './update-key-limit';
 import { updateKeySkip } from './update-key-skip';
 
 export const createQueriesMapFactory =
-  <Q extends Record<string, any>>() =>
+  <Q extends object>() =>
   (keys: readonly Key<Q>[]) => {
     const queriesMap = new Map<string, Key<Q>>();
     for (const key of keys) {
