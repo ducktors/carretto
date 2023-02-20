@@ -1,5 +1,12 @@
 # @carretto/mongodb
 
+## 0.1.2
+
+### Patch Changes
+
+- Updated dependencies [7f26a46]
+  - @carretto/main-loader@0.3.2
+
 ## 0.1.1
 
 ### Patch Changes

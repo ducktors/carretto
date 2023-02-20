@@ -1,6 +1,6 @@
 {
   "name": "@carretto/mongodb",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "description": "MongoDB adapter for Zaino dataloader",
   "main": "dist/index.js",
