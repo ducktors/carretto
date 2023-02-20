@@ -1,5 +1,11 @@
 # @carretto/main-loader
 
+## 0.3.3
+
+### Patch Changes
+
+- 6952c9c: Remove exports from package.json and fix ci tests
+
 ## 0.3.2
 
 ### Patch Changes

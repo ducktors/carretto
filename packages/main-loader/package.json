@@ -1,6 +1,6 @@
 {
   "name": "@carretto/main-loader",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "private": false,
   "description": "A dataloader implementation with adapters",
   "main": "dist/index.js",
