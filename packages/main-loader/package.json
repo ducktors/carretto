@@ -9,7 +9,7 @@
     "build": "tsc --build",
     "check:types": "tsc --noEmit",
     "test": "pnpm check:types && pnpm unit",
-    "test:ci": "vitest run --coverage --silent",
+    "test:ci": "pnpm turbo build && vitest run --coverage --silent",
     "unit": "vitest run"
   },
   "keywords": [],
