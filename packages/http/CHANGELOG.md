@@ -1,5 +1,13 @@
 # @carretto/http
 
+## 0.1.4
+
+### Patch Changes
+
+- 67cc23c: fix CI and package build
+- Updated dependencies [67cc23c]
+  - @carretto/main-loader@0.3.4
+
 ## 0.1.3
 
 ### Patch Changes
