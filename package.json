@@ -7,7 +7,7 @@
     "build": "pnpm turbo build --color",
     "test": "turbo run test",
     "preinstall": "npx only-allow pnpm",
-    "release": "changeset publish",
+    "release": "pnpm run build && changeset publish",
     "precommit": "pnpm install",
     "lint": "rome check .",
     "format": "rome format --write .",
