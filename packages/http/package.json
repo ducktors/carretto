@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc --build",
+    "build": "rimraf dist && tsc --build",
     "check:types": "tsc --noEmit",
     "test": "pnpm check:types && vitest run",
     "test:ci": "vitest run --coverage --silent"
@@ -23,6 +23,7 @@
     "@types/node": "^18.11.18",
     "@vitest/coverage-istanbul": "^0.27.3",
     "graphql": "^16.6.0",
+    "rimraf": "^4.1.2",
     "undici": "^5.14.0"
   },
   "peerDependencies": {
