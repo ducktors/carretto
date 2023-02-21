@@ -1,5 +1,11 @@
 # @carretto/main-loader
 
+## 0.3.4
+
+### Patch Changes
+
+- 67cc23c: fix CI and package build
+
 ## 0.3.3
 
 ### Patch Changes
