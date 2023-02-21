@@ -1,5 +1,11 @@
 # @carretto/main-loader
 
+## 0.3.5
+
+### Patch Changes
+
+- 1a6d125: add build step before release
+
 ## 0.3.4
 
 ### Patch Changes
