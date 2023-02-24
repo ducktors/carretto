@@ -1,0 +1,32 @@
+{
+  "name": "@carretto/projection",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Utilities for projection",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rimraf dist && tsc --build",
+    "check:types": "tsc --noEmit",
+    "test": "pnpm check:types && vitest run",
+    "test:ci": "vitest run --coverage --silent"
+  },
+  "keywords": [],
+  "author": "Alessandro Magionami - @alemagio",
+  "license": "MIT",
+  "dependencies": {
+    "dot-object": "^2.1.4",
+    "tslib": "^2.4.1"
+  },
+  "devDependencies": {
+    "@ducktors/tsconfig": "^0.1.1",
+    "@types/dot-object": "^2.1.2",
+    "@types/node": "^18.11.18",
+    "@vitest/coverage-istanbul": "^0.27.3",
+    "graphql": "^16.6.0",
+    "rimraf": "^4.1.2"
+  },
+  "files": [
+    "dist"
+  ]
+}

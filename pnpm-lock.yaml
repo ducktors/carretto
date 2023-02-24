@@ -37,6 +37,7 @@ importers:
   packages/http:
     specifiers:
       '@carretto/main-loader': workspace:*
+      '@carretto/projection': workspace:*
       '@ducktors/tsconfig': ^0.1.1
       '@types/node': ^18.11.18
       '@vitest/coverage-istanbul': ^0.27.3
@@ -46,6 +47,7 @@ importers:
       undici: ^5.14.0
     dependencies:
       '@carretto/main-loader': link:../main-loader
+      '@carretto/projection': link:../projection
       tslib: 2.4.1
     devDependencies:
       '@ducktors/tsconfig': 0.1.1
@@ -57,24 +59,22 @@ importers:
 
   packages/main-loader:
     specifiers:
+      '@carretto/projection': workspace:*
       '@ducktors/tsconfig': ^0.1.1
-      '@types/dot-object': ^2.1.2
       '@types/object-hash': ^2.2.1
       '@vitest/coverage-istanbul': ^0.27.3
       dataloader: ^2.1.0
-      dot-object: ^2.1.4
       graphql: ^16.6.0
       mongodb: ^4.11.0
       object-hash: ^3.0.0
       rimraf: ^4.1.2
       tslib: ^2.4.1
     dependencies:
-      dot-object: 2.1.4
+      '@carretto/projection': link:../projection
       object-hash: 3.0.0
       tslib: 2.4.1
     devDependencies:
       '@ducktors/tsconfig': 0.1.1
-      '@types/dot-object': 2.1.2
       '@types/object-hash': 2.2.1
       '@vitest/coverage-istanbul': 0.27.3
       dataloader: 2.1.0
@@ -85,6 +85,7 @@ importers:
   packages/mongodb:
     specifiers:
       '@carretto/main-loader': workspace:*
+      '@carretto/projection': workspace:*
       '@ducktors/tsconfig': ^0.1.1
       '@vitest/coverage-istanbul': ^0.27.3
       graphql: ^16.6.0
@@ -93,12 +94,34 @@ importers:
       tslib: ^2.4.1
     dependencies:
       '@carretto/main-loader': link:../main-loader
+      '@carretto/projection': link:../projection
       tslib: 2.4.1
     devDependencies:
       '@ducktors/tsconfig': 0.1.1
       '@vitest/coverage-istanbul': 0.27.3
       graphql: 16.6.0
       mongodb: 4.12.1
+      rimraf: 4.1.2
+
+  packages/projection:
+    specifiers:
+      '@ducktors/tsconfig': ^0.1.1
+      '@types/dot-object': ^2.1.2
+      '@types/node': ^18.11.18
+      '@vitest/coverage-istanbul': ^0.27.3
+      dot-object: ^2.1.4
+      graphql: ^16.6.0
+      rimraf: ^4.1.2
+      tslib: ^2.4.1
+    dependencies:
+      dot-object: 2.1.4
+      tslib: 2.4.1
+    devDependencies:
+      '@ducktors/tsconfig': 0.1.1
+      '@types/dot-object': 2.1.2
+      '@types/node': 18.11.18
+      '@vitest/coverage-istanbul': 0.27.3
+      graphql: 16.6.0
       rimraf: 4.1.2
 
 packages:
@@ -2237,7 +2260,7 @@ packages:
     dev: true
 
   /concat-map/0.0.1:
-    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
+    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
   /conventional-changelog-angular/5.0.13:
     resolution: {integrity: sha512-i/gipMxs7s8L/QeuavPF2hLnJgH6pEZAttySB6aiQLWcX3puWDL3ACVmvBhJGxnAy52Qc15ua26BufY6KpmrVA==}
