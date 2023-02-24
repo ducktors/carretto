@@ -154,6 +154,7 @@ jobs:
           cp ./packages/http/coverage/coverage-final.json ./coverage/coverage-http.json
           cp ./packages/main-loader/coverage/coverage-final.json ./coverage/coverage-main-loader.json
           cp ./packages/mongodb/coverage/coverage-final.json ./coverage/coverage-mongodb.json
+          cp ./packages/projection/coverage/coverage-final.json ./coverage/coverage-projection.json
 
       - name: Merge json coverage reports
         run: pnpm dlx nyc merge coverage coverage/merged-coverage.json
