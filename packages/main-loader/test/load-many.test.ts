@@ -3,7 +3,7 @@ import { graphql, GraphQLList, GraphQLObjectType, GraphQLSchema, GraphQLString }
 
 import { TestLoader } from './util/test-loader';
 
-test.only('should use default skip and limit', async () => {
+test('should use default skip and limit', async () => {
   const spy = vi.fn().mockImplementation(() => null);
   const loader = new TestLoader(spy);
 
@@ -65,6 +65,18 @@ test.only('should use default skip and limit', async () => {
   expect(errors).toBe(undefined);
 
   expect(spy).toHaveBeenCalledOnce();
+
+  expect(spy).toHaveBeenCalledWith({
+    query: { test: 'test' },
+    projection: { friends: 1, otherFriends: 1 },
+    skip: 0,
+    limit: 0,
+  });
+
+  expect(data!.person).toMatchObject({
+    friends: ['Mario', 'Luigi'],
+    otherFriends: ['Mario', 'Luigi'],
+  });
 });
 
 test('should aggregate same queries projections and skip and limit', async () => {
@@ -135,7 +147,7 @@ test('should aggregate same queries projections and skip and limit', async () =>
   expect(spy).toHaveBeenCalledOnce();
   expect(spy).toHaveBeenCalledWith({
     query: { test: 'test' },
-    projection: { firstName: 1, lastName: 1 },
+    projection: { friends: 1, otherFriends: 1 },
     skip: 0,
     limit: 15,
   });
