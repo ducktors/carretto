@@ -1,6 +1,7 @@
 import { Collection, Document, Filter, WithId } from 'mongodb';
 
 import { MainLoader } from '@carretto/main-loader';
+import { Projection } from '@carretto/projection';
 
 import { Key } from './key';
 
@@ -12,7 +13,7 @@ export class DataloaderMongoDB<T extends WithId<Document>> extends MainLoader<T,
     this.collection = collection;
   }
 
-  protected execute(key: Key<T>) {
+  protected execute(key: Pick<Key<T>, 'query' | 'skip' | 'limit'> & { projection: Projection }) {
     return key.skip !== undefined || key.limit !== undefined
       ? this.collection
           .find<T>(key.query, {

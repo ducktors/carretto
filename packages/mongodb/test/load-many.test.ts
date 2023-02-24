@@ -9,7 +9,7 @@ test('should aggregate same queries projections and skip and limit', async () =>
       .fn()
       .mockImplementation(
         (query, options: { projection: unknown; skip: number; limit: number }) => {
-          expect(options!.projection).toEqual({ firstName: 1, lastName: 1 });
+          expect(options!.projection).toEqual({ friends: 1, otherFriends: 1 });
           expect(options.skip).toBe(0);
           expect(options.limit).toBe(15);
           return {
@@ -25,10 +25,10 @@ test('should aggregate same queries projections and skip and limit', async () =>
     fields: () => ({
       friends: {
         type: new GraphQLList(GraphQLString),
-        async resolve() {
+        async resolve(source, args, context, info) {
           return loader.loadMany({
             query: { test: 'test' },
-            projection: { firstName: 1 },
+            info,
             skip: 0,
             limit: 10,
           });
@@ -36,10 +36,10 @@ test('should aggregate same queries projections and skip and limit', async () =>
       },
       otherFriends: {
         type: new GraphQLList(GraphQLString),
-        async resolve() {
+        async resolve(source, args, context, info) {
           return loader.loadMany({
             query: { test: 'test' },
-            projection: { lastName: 1 },
+            info,
             skip: 5,
             limit: 15,
           });
