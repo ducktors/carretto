@@ -12,20 +12,20 @@ test('should aggregate same queries projections', async () => {
     fields: () => ({
       firstName: {
         type: new GraphQLNonNull(GraphQLString),
-        async resolve() {
+        async resolve(source, args, context, info) {
           await loader.load({
             query: { test: 'test' },
-            projection: { firstName: 1 },
+            info,
           });
           return 'Mario';
         },
       },
       lastName: {
         type: new GraphQLNonNull(GraphQLString),
-        async resolve() {
+        async resolve(source, args, context, info) {
           await loader.load({
             query: { test: 'test' },
-            projection: { lastName: 1 },
+            info,
           });
           return 'Rossi';
         },

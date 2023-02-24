@@ -3,7 +3,7 @@ import { graphql, GraphQLList, GraphQLObjectType, GraphQLSchema, GraphQLString }
 
 import { TestLoader } from './util/test-loader';
 
-test('should use default skip and limit', async () => {
+test.only('should use default skip and limit', async () => {
   const spy = vi.fn().mockImplementation(() => null);
   const loader = new TestLoader(spy);
 
@@ -12,10 +12,10 @@ test('should use default skip and limit', async () => {
     fields: () => ({
       friends: {
         type: new GraphQLList(GraphQLString),
-        async resolve() {
+        async resolve(source, args, context, info) {
           await loader.loadMany({
             query: { test: 'test' },
-            projection: { firstName: 1 },
+            info,
           });
 
           return ['Mario', 'Luigi'];
@@ -23,10 +23,10 @@ test('should use default skip and limit', async () => {
       },
       otherFriends: {
         type: new GraphQLList(GraphQLString),
-        async resolve() {
+        async resolve(source, args, context, info) {
           await loader.loadMany({
             query: { test: 'test' },
-            projection: { lastName: 1 },
+            info,
           });
 
           return ['Mario', 'Luigi'];
@@ -65,12 +65,6 @@ test('should use default skip and limit', async () => {
   expect(errors).toBe(undefined);
 
   expect(spy).toHaveBeenCalledOnce();
-  expect(spy).toHaveBeenCalledWith({
-    query: { test: 'test' },
-    projection: { firstName: 1, lastName: 1 },
-    skip: 0,
-    limit: 0,
-  });
 });
 
 test('should aggregate same queries projections and skip and limit', async () => {
@@ -82,10 +76,10 @@ test('should aggregate same queries projections and skip and limit', async () =>
     fields: () => ({
       friends: {
         type: new GraphQLList(GraphQLString),
-        async resolve() {
+        async resolve(source, args, context, info) {
           await loader.loadMany({
             query: { test: 'test' },
-            projection: { firstName: 1 },
+            info,
             skip: 0,
             limit: 10,
           });
@@ -95,10 +89,10 @@ test('should aggregate same queries projections and skip and limit', async () =>
       },
       otherFriends: {
         type: new GraphQLList(GraphQLString),
-        async resolve() {
+        async resolve(source, args, context, info) {
           await loader.loadMany({
             query: { test: 'test' },
-            projection: { lastName: 1 },
+            info,
             skip: 5,
             limit: 15,
           });

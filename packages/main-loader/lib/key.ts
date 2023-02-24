@@ -1,8 +1,8 @@
-import { Projection } from './projection';
+import { GraphQLResolveInfo } from 'graphql';
 
 export interface Key<Q extends object> {
   query: Q;
-  projection: Projection;
+  info: GraphQLResolveInfo;
   skip?: number;
   limit?: number;
 }
