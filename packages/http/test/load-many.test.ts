@@ -11,12 +11,12 @@ vi.mock('undici');
 const url = 'http://localhost:3000';
 
 test('should aggregate same queries projections', async () => {
-  vi.mocked(request).mockImplementationOnce((input: string) => {
+  vi.mocked(request).mockImplementationOnce(((input: string) => {
     expect(input).toBe(
-      `${url}/?${stringify({ projection: ['firstName', 'lastName'] })}&skip=0&limit=15`,
+      `${url}/?${stringify({ projection: ['friends', 'otherFriends'] })}&skip=0&limit=15`,
     );
     return Promise.resolve({ body: { json: () => ['Mario', 'Luigi'] } });
-  });
+  }) as any);
   const loader = new DataloaderHttp();
 
   const personType = new GraphQLObjectType({
@@ -24,10 +24,10 @@ test('should aggregate same queries projections', async () => {
     fields: () => ({
       friends: {
         type: new GraphQLList(GraphQLString),
-        async resolve() {
+        async resolve(source, args, context, info) {
           return loader.loadMany({
             query: new URL(url),
-            projection: { firstName: 1 },
+            info,
             skip: 0,
             limit: 10,
           });
@@ -35,10 +35,10 @@ test('should aggregate same queries projections', async () => {
       },
       otherFriends: {
         type: new GraphQLList(GraphQLString),
-        async resolve() {
+        async resolve(source, args, context, info) {
           return loader.loadMany({
             query: new URL(url),
-            projection: { lastName: 1 },
+            info,
             skip: 5,
             limit: 15,
           });
