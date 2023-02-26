@@ -22,24 +22,6 @@ test('should build projection', async () => {
     }),
   });
 
-  const catType = new GraphQLObjectType({
-    name: 'Cat',
-    fields: () => ({
-      name: {
-        type: new GraphQLNonNull(GraphQLString),
-        async resolve() {
-          return 'Kitty';
-        },
-      },
-      breed: {
-        type: new GraphQLNonNull(GraphQLString),
-        async resolve() {
-          return 'breed';
-        },
-      },
-    }),
-  });
-
   const personType = new GraphQLObjectType({
     name: 'Person',
     fields: () => ({
