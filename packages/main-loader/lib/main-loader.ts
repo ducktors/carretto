@@ -19,12 +19,12 @@ export abstract class MainLoader<TReturn, TQuery extends object> {
   }
 
   public async load<U extends TReturn = TReturn>(key: Key<TQuery>): Promise<U | null> {
-    this.onLoad(key);
+    key = this.preLoad(key);
     return this.loader.load(key) as Promise<U | null>;
   }
 
   public async loadMany<U extends TReturn = TReturn>(key: Key<TQuery>): Promise<U[]> {
-    this.onLoad(key);
+    key = this.preLoad(key);
     const { skip, limit } = key
     return this.loader.load({ skip: skip ?? 0, limit: limit ?? 0, ...key }) as Promise<U[]>;
   }
@@ -48,7 +48,7 @@ export abstract class MainLoader<TReturn, TQuery extends object> {
     return hash(key);
   }
 
-  protected onLoad(key: Key<TQuery>) {}
+  protected preLoad(key: Key<TQuery>): Key<TQuery> { return key }
 
   protected onError(error: Error, key: Key<TQuery>) {}
 
