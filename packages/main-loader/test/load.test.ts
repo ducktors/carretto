@@ -15,7 +15,7 @@ test('should aggregate same queries projections', async () => {
         async resolve(source, args, context, info) {
           await loader.load({
             query: { test: 'test' },
-            info,
+            projection: { firstName: 1 },
           });
           return 'Mario';
         },
@@ -25,7 +25,7 @@ test('should aggregate same queries projections', async () => {
         async resolve(source, args, context, info) {
           await loader.load({
             query: { test: 'test' },
-            info,
+            projection: { lastName: 1 },
           });
           return 'Rossi';
         },

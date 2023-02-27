@@ -27,7 +27,7 @@ test('should aggregate same queries projections', async () => {
         async resolve(source, args, context, info) {
           return loader.loadMany({
             query: new URL(url),
-            info,
+            projection: { friends: 1 },
             skip: 0,
             limit: 10,
           });
@@ -38,7 +38,7 @@ test('should aggregate same queries projections', async () => {
         async resolve(source, args, context, info) {
           return loader.loadMany({
             query: new URL(url),
-            info,
+            projection: { otherFriends: 1 },
             skip: 5,
             limit: 15,
           });

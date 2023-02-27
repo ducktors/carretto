@@ -3,16 +3,14 @@ import DataLoader, { BatchLoadFn } from 'dataloader';
 import { hash } from './hash';
 import type { Key } from './key';
 import { createQueriesMapFactory } from './create-queries-map-factory';
-import { ProjectionKey } from './projection-key';
-import { buildProjection } from '@carretto/projection';
 
-export abstract class MainLoader<T, Q extends object> {
-  protected loader: DataLoader<ProjectionKey<Q>, T>;
+export abstract class MainLoader<TReturn, TQuery extends object> {
+  protected loader: DataLoader<Key<TQuery>, TReturn>;
   protected createQueriesMap;
 
   constructor() {
-    this.loader = new DataLoader<ProjectionKey<Q>, T, string>(
-      this.batchLoadFn.bind(this) as BatchLoadFn<ProjectionKey<Q>, T>,
+    this.loader = new DataLoader<Key<TQuery>, TReturn, string>(
+      this.batchLoadFn.bind(this) as BatchLoadFn<Key<TQuery>, TReturn>,
       {
         cacheKeyFn: this.cacheKeyFn,
       },
@@ -20,24 +18,24 @@ export abstract class MainLoader<T, Q extends object> {
     this.createQueriesMap = createQueriesMapFactory()
   }
 
-  public async load<U extends T = T>(key: Key<Q>): Promise<U | null> {
+  public async load<U extends TReturn = TReturn>(key: Key<TQuery>): Promise<U | null> {
     this.onLoad(key);
-    return this.loader.load({ query: key.query, projection: buildProjection(key.info) }) as Promise<U | null>;
+    return this.loader.load(key) as Promise<U | null>;
   }
 
-  public async loadMany<U extends T = T>(key: Key<Q>): Promise<U[]> {
+  public async loadMany<U extends TReturn = TReturn>(key: Key<TQuery>): Promise<U[]> {
     this.onLoad(key);
-    const { skip, limit, query, info } = key
-    return this.loader.load({ skip: skip ?? 0, limit: limit ?? 0, query, projection: buildProjection(info) }) as Promise<U[]>;
+    const { skip, limit } = key
+    return this.loader.load({ skip: skip ?? 0, limit: limit ?? 0, ...key }) as Promise<U[]>;
   }
 
-  protected async batchLoadFn(keys: readonly ProjectionKey<Q>[]) {
-    const promises: Promise<T[] | T | null>[] = [];
+  protected async batchLoadFn(keys: readonly Key<TQuery>[]) {
+    const promises: Promise<TReturn[] | TReturn | null>[] = [];
     const indexedPromises = new Map<string, number>();
 
     for (const [hashKey, key] of this.createQueriesMap(keys)) {
       indexedPromises.set(hashKey, promises.length);
-      promises.push(this.execute(key as ProjectionKey<Q>));
+      promises.push(this.execute(key as Key<TQuery>));
     }
 
     const resultSet = await Promise.all(promises);
@@ -46,13 +44,13 @@ export abstract class MainLoader<T, Q extends object> {
     });
   }
 
-  protected cacheKeyFn(key: ProjectionKey<Q>) {
+  protected cacheKeyFn(key: Key<TQuery>) {
     return hash(key);
   }
 
-  protected onLoad(key: Key<Q>) {}
+  protected onLoad(key: Key<TQuery>) {}
 
-  protected onError(error: Error, key: Key<Q>) {}
+  protected onError(error: Error, key: Key<TQuery>) {}
 
-  protected abstract execute(key: ProjectionKey<Q>, options?: unknown): Promise<T | T[] | null>;
+  protected abstract execute(key: Key<TQuery>, options?: unknown): Promise<TReturn | TReturn[] | null>;
 }

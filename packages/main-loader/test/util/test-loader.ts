@@ -1,15 +1,14 @@
-import { MainLoader } from '../../';
-import { ProjectionKey } from '../../lib/projection-key';
+import { Key, MainLoader } from '../../';
 
 export class TestLoader extends MainLoader<void, object> {
-  public spy: (key: ProjectionKey<any>) => Promise<void>;
+  public spy: (key: Key<any>) => Promise<void>;
 
-  constructor(spy: (key: ProjectionKey<any>) => Promise<void>) {
+  constructor(spy: (key: Key<any>) => Promise<void>) {
     super();
     this.spy = spy;
   }
 
-  protected execute(key: ProjectionKey<any>) {
+  protected execute(key: Key<any>) {
     return this.spy(key);
   }
 }

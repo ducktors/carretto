@@ -2,12 +2,12 @@ import { hash } from './hash';
 import { mergeProjections } from '@carretto/projection';
 import { updateKeyLimit } from './update-key-limit';
 import { updateKeySkip } from './update-key-skip';
-import { ProjectionKey } from './projection-key';
+import { Key } from './key';
 
 export const createQueriesMapFactory =
-  <Q extends object>() =>
-  (keys: readonly ProjectionKey<Q>[]) => {
-    const queriesMap = new Map<string, ProjectionKey<Q>>();
+  <TQuery extends object>() =>
+  (keys: readonly Key<TQuery>[]) => {
+    const queriesMap = new Map<string, Key<TQuery>>();
     for (const key of keys) {
       const queryHash = hash(key.query);
 
@@ -17,7 +17,7 @@ export const createQueriesMapFactory =
         continue;
       }
 
-      const newMappedKey: ProjectionKey<Q> = {
+      const newMappedKey: Key<TQuery> = {
         query: key.query,
         projection: mergeProjections(queriesMap.get(queryHash)!.projection, key.projection),
       };

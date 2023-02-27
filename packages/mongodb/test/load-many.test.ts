@@ -28,7 +28,7 @@ test('should aggregate same queries projections and skip and limit', async () =>
         async resolve(source, args, context, info) {
           return loader.loadMany({
             query: { test: 'test' },
-            info,
+            projection: { friends: 1 },
             skip: 0,
             limit: 10,
           });
@@ -39,7 +39,7 @@ test('should aggregate same queries projections and skip and limit', async () =>
         async resolve(source, args, context, info) {
           return loader.loadMany({
             query: { test: 'test' },
-            info,
+            projection: { otherFriends: 1 },
             skip: 5,
             limit: 15,
           });

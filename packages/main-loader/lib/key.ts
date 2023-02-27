@@ -1,8 +1,8 @@
-import { GraphQLResolveInfo } from 'graphql';
+import { Projection } from '@carretto/projection';
 
-export interface Key<Q extends object> {
-  query: Q;
-  info: GraphQLResolveInfo;
+export interface Key<TQuery extends object> {
+  query: TQuery;
+  projection: Projection;
   skip?: number;
   limit?: number;
 }
