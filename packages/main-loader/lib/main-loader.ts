@@ -4,7 +4,7 @@ import { hash } from './hash';
 import type { Key } from './key';
 import { createQueriesMapFactory } from './create-queries-map-factory';
 
-export abstract class MainLoader<TReturn, TQuery extends object> {
+export abstract class MainLoader<TReturn, TQuery extends object, TLoadKey extends Pick<Key<TQuery>, 'query' | 'skip' | 'limit'> = Key<TQuery>> {
   protected loader: DataLoader<Key<TQuery>, TReturn>;
   protected createQueriesMap;
 
@@ -18,15 +18,15 @@ export abstract class MainLoader<TReturn, TQuery extends object> {
     this.createQueriesMap = createQueriesMapFactory()
   }
 
-  public async load<U extends TReturn = TReturn>(key: Key<TQuery>): Promise<U | null> {
-    key = this.preLoad(key);
-    return this.loader.load(key) as Promise<U | null>;
+  public async load<U extends TReturn = TReturn>(key: TLoadKey): Promise<U | null> {
+    const internalKey = this.preLoad(key);
+    return this.loader.load(internalKey) as Promise<U | null>;
   }
 
-  public async loadMany<U extends TReturn = TReturn>(key: Key<TQuery>): Promise<U[]> {
-    key = this.preLoad(key);
+  public async loadMany<U extends TReturn = TReturn>(key: TLoadKey): Promise<U[]> {
+    const internalKey = this.preLoad(key);
     const { skip, limit } = key
-    return this.loader.load({ skip: skip ?? 0, limit: limit ?? 0, ...key }) as Promise<U[]>;
+    return this.loader.load({ skip: skip ?? 0, limit: limit ?? 0, ...internalKey }) as Promise<U[]>;
   }
 
   protected async batchLoadFn(keys: readonly Key<TQuery>[]) {
@@ -48,7 +48,7 @@ export abstract class MainLoader<TReturn, TQuery extends object> {
     return hash(key);
   }
 
-  protected preLoad(key: Key<TQuery>): Key<TQuery> { return key }
+  protected preLoad(key: TLoadKey): Key<TQuery> { return key as unknown as Key<TQuery> }
 
   protected onError(error: Error, key: Key<TQuery>) {}
 
