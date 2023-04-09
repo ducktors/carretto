@@ -13,13 +13,14 @@ export class DataloaderMongoDB<T extends WithId<Document>> extends MainLoader<T,
     this.collection = collection;
   }
 
-  protected execute(key: Pick<Key<T>, 'query' | 'skip' | 'limit'> & { projection: Projection }) {
+  protected execute(key: Pick<Key<T>, 'query' | 'skip' | 'limit' | 'sort'> & { projection: Projection }) {
     return key.skip !== undefined || key.limit !== undefined
       ? this.collection
           .find<T>(key.query, {
             projection: key.projection,
             limit: key.limit,
             skip: key.skip,
+            sort: key.sort,
           })
           .toArray()
       : this.collection.findOne<T>(key.query, { projection: key.projection });
