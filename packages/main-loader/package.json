@@ -24,10 +24,10 @@
     "@ducktors/tsconfig": "^0.1.1",
     "@types/object-hash": "^2.2.1",
     "@vitest/coverage-istanbul": "^0.27.3",
-    "dataloader": "^2.1.0",
-    "graphql": "^16.6.0",
-    "mongodb": "^4.11.0",
-    "rimraf": "^4.1.2"
+    "dataloader": "^2.2.2",
+    "graphql": "^16.7.1",
+    "mongodb": "^4.16.0",
+    "rimraf": "^4.4.1"
   },
   "peerDependencies": {
     "dataloader": "^2.1.0",
