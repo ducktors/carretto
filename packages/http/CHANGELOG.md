@@ -1,5 +1,12 @@
 # @carretto/http
 
+## 0.1.6
+
+### Patch Changes
+
+- Updated dependencies [7c9dfbe]
+  - @carretto/main-loader@0.4.0
+
 ## 0.1.5
 
 ### Patch Changes
