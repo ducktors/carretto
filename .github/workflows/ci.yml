@@ -77,6 +77,14 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Are The Types Wrong
+        run: |
+          npm i -g @arethetypeswrong/cli
+          attw --pack packages/http
+          attw --pack packages/main-loader
+          attw --pack packages/mongodb
+          attw --pack packages/projection
+
   lint:
     runs-on: macos-latest
     name: Lint
