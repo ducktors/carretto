@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  TURBO_API: https://eu.trrc.ducktors.dev
+  TURBO_API: https://turborepo-remote-cache.fly.dev
   TURBO_TEAM: team_ducktors
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
