@@ -180,6 +180,7 @@ jobs:
           path-to-lcov: ./coverage/lcov.info
 
       - name: CodeClimate
+        continue-on-error: true
         uses: paambaati/codeclimate-action@v5.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_TEST_REPORTER_ID }}
