@@ -26,12 +26,12 @@
     "@vitest/coverage-istanbul": "^0.27.3",
     "dataloader": "^2.1.0",
     "graphql": "^16.6.0",
-    "mongodb": "^4.11.0",
+    "mongodb": "^4.17.0",
     "rimraf": "^4.1.2"
   },
   "peerDependencies": {
     "dataloader": "^2.1.0",
-    "mongodb": "^4.11.0"
+    "mongodb": "^4.17.0"
   },
   "files": [
     "dist"
