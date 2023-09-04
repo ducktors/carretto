@@ -1,5 +1,11 @@
 # @carretto/main-loader
 
+## 0.4.1
+
+### Patch Changes
+
+- c9cda37: chore(deps-dev): bump mongodb from 4.12.1 to 4.17.0
+
 ## 0.4.0
 
 ### Minor Changes
