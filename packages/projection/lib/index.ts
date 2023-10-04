@@ -1,3 +1,2 @@
-export { buildProjection } from './build-projection'
-export { mergeProjections } from './merge-projections'
-export { Projection } from './projection'
+export { mergeProjections } from "./merge-projections";
+export type { Projection } from "./projection";

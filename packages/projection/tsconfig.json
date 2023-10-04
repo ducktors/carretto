@@ -1,5 +1,5 @@
 {
-  "extends": "@ducktors/tsconfig",
+  "extends": "fastify-tsconfig",
   "compilerOptions": {
     "outDir": "dist"
   },

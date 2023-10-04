@@ -1,75 +1,28 @@
-import { expect, test, vi } from 'vitest';
-import { graphql, GraphQLNonNull, GraphQLObjectType, GraphQLSchema, GraphQLString } from 'graphql';
+import { test } from "node:test";
 
-import { TestLoader } from './util/test-loader';
+import { TestLoader } from "./util/test-loader";
+import assert from "assert";
 
-test('should aggregate same queries projections', async () => {
-  const spy = vi.fn().mockImplementation(() => null);
+test("should aggregate same queries projections", async (t) => {
+  const spy = t.mock.fn();
   const loader = new TestLoader(spy);
 
-  const personType = new GraphQLObjectType({
-    name: 'Person',
-    fields: () => ({
-      firstName: {
-        type: new GraphQLNonNull(GraphQLString),
-        async resolve(source, args, context, info) {
-          await loader.load({
-            query: { test: 'test' },
-            projection: { firstName: 1 },
-          });
-          return 'Mario';
-        },
-      },
-      lastName: {
-        type: new GraphQLNonNull(GraphQLString),
-        async resolve(source, args, context, info) {
-          await loader.load({
-            query: { test: 'test' },
-            projection: { lastName: 1 },
-          });
-          return 'Rossi';
-        },
-      },
+  await Promise.all([
+    loader.load({
+      query: { test: "test" },
+      projection: { firstName: 1 },
     }),
-  });
-
-  const queryType = new GraphQLObjectType({
-    name: 'Query',
-    fields: () => ({
-      person: {
-        type: personType,
-        resolve: () => {
-          return {};
-        },
-      },
+    loader.load({
+      query: { test: "test" },
+      projection: { lastName: 1 },
     }),
-  });
+  ]);
 
-  const { errors, data } = await graphql({
-    schema: new GraphQLSchema({
-      types: [personType],
-      query: queryType,
-    }),
-    source: `
-      {
-        person {
-          firstName
-          lastName
-        }
-      }
-    `,
-  });
-
-  expect(spy).toHaveBeenCalledOnce();
-  expect(spy).toHaveBeenCalledWith({
-    query: { test: 'test' },
-    projection: { firstName: 1, lastName: 1 },
-  });
-
-  expect(errors).toBe(undefined);
-
-  expect(data!.person).toMatchObject({
-    firstName: 'Mario',
-    lastName: 'Rossi',
-  });
+  assert.strictEqual(spy.mock.callCount(), 1);
+  assert.deepStrictEqual(spy.mock.calls[0].arguments, [
+    {
+      query: { test: "test" },
+      projection: { firstName: 1, lastName: 1 },
+    },
+  ]);
 });
