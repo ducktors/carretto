@@ -1,9 +1,9 @@
-import { Key, MainLoader } from '../../';
+import { Key, MainLoader } from "../../";
 
 export class TestLoader extends MainLoader<void, object> {
   public spy: (key: Key<any>) => Promise<void>;
 
-  constructor(spy: (key: Key<any>) => Promise<void>) {
+  constructor(spy: any) {
     super();
     this.spy = spy;
   }

@@ -1,85 +1,47 @@
-import { expect, test, vi } from 'vitest';
-import {
-  graphql,
-  GraphQLNonNull,
-  GraphQLObjectType,
-  GraphQLSchema,
-  GraphQLString,
-} from 'graphql';
+import { setup, teardown } from "vitest-mongodb";
+import { test, before, after } from "node:test";
+import assert from "node:assert";
 
-import { DataloaderMongoDB } from '../lib';
+import { DataloaderMongoDB } from "../lib";
+import { Document, MongoClient, ObjectId, WithId } from "mongodb";
 
-test('should aggregate same queries projections', async () => {
-  const collection = {
-    findOne: vi.fn().mockImplementation((query, options: { projection: unknown }) => {
-      expect(options!.projection).toEqual({ firstName: 1, lastName: 1 });
-      return {
-        firstName: 'Mario',
-        lastName: 'Rossi',
-      };
-    }),
-  };
-  const loader = new DataloaderMongoDB(collection as any);
+let client: MongoClient;
+before(async () => {
+  await setup();
+  client = new MongoClient(global.__MONGO_URI__);
+  await client.connect();
+});
 
-  const personType = new GraphQLObjectType({
-    name: 'Person',
-    fields: () => ({
-      firstName: {
-        type: new GraphQLNonNull(GraphQLString),
-        async resolve(source, args, context, info) {
-          const result = await loader.load({
-            query: { test: 'test' },
-            projection: { firstName: 1 },
-          });
-          return result?.firstName;
-        },
-      },
-      lastName: {
-        type: new GraphQLNonNull(GraphQLString),
-        async resolve(source, args, context, info) {
-          const result = await loader.load({
-            query: { test: 'test' },
-            projection: { lastName: 1 },
-          });
-          return result?.lastName;
-        },
-      },
-    }),
+after(async () => {
+  await client.close();
+  await teardown();
+});
+
+test("should aggregate same queries projections", async (t) => {
+  const personId = new ObjectId();
+  const db = client.db("test");
+  const collection = db.collection<WithId<Document>>("people");
+  await collection.insertOne({
+    _id: personId,
+    firstName: "Mario",
+    lastName: "Rossi",
   });
+  t.mock.method(collection, "findOne");
+  const loader = new DataloaderMongoDB(collection);
 
-  const queryType = new GraphQLObjectType({
-    name: 'Query',
-    fields: () => ({
-      person: {
-        type: personType,
-        resolve: () => {
-          return {};
-        },
-      },
+  const results = await Promise.all([
+    loader.load({
+      query: { _id: personId },
+      projection: { firstName: 1 },
     }),
-  });
-
-  const { errors, data } = await graphql({
-    schema: new GraphQLSchema({
-      types: [personType],
-      query: queryType,
+    loader.load({
+      query: { _id: personId },
+      projection: { lastName: 1 },
     }),
-    source: `
-      {
-        person {
-          firstName
-          lastName
-        }
-      }
-    `,
-  });
+  ]);
 
-  expect(collection.findOne).toHaveBeenCalledOnce();
+  assert.strictEqual(collection.findOne.mock.calls.length, 1);
 
-  expect(errors).toBe(undefined);
-
-  expect(data!.person).toMatchObject({
-    firstName: 'Mario',
-    lastName: 'Rossi',
-  });
+  assert.equal(results[0]!.firstName, "Mario");
+  assert.equal(results[0]!.lastName, "Rossi");
 });

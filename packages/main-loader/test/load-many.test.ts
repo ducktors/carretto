@@ -1,159 +1,59 @@
-import { expect, test, vi } from 'vitest';
-import { graphql, GraphQLList, GraphQLObjectType, GraphQLSchema, GraphQLString } from 'graphql';
+import { test } from "node:test";
+import { TestLoader } from "./util/test-loader";
+import assert from "node:assert";
 
-import { TestLoader } from './util/test-loader';
-
-test('should use default skip and limit', async () => {
-  const spy = vi.fn().mockImplementation(() => null);
+test("should use default skip and limit", async (t) => {
+  const spy = t.mock.fn();
   const loader = new TestLoader(spy);
 
-  const personType = new GraphQLObjectType({
-    name: 'Person',
-    fields: () => ({
-      friends: {
-        type: new GraphQLList(GraphQLString),
-        async resolve(source, args, context, info) {
-          await loader.loadMany({
-            query: { test: 'test' },
-            projection: { friends: 1 },
-          });
-
-          return ['Mario', 'Luigi'];
-        },
-      },
-      otherFriends: {
-        type: new GraphQLList(GraphQLString),
-        async resolve(source, args, context, info) {
-          await loader.loadMany({
-            query: { test: 'test' },
-            projection: { otherFriends: 1 },
-          });
-
-          return ['Mario', 'Luigi'];
-        },
-      },
+  await Promise.all([
+    loader.loadMany({
+      query: { test: "test" },
+      projection: { friends: 1 },
     }),
-  });
-
-  const queryType = new GraphQLObjectType({
-    name: 'Query',
-    fields: () => ({
-      person: {
-        type: personType,
-        resolve: () => {
-          return {};
-        },
-      },
+    loader.loadMany({
+      query: { test: "test" },
+      projection: { otherFriends: 1 },
     }),
-  });
+  ]);
 
-  const { errors, data } = await graphql({
-    schema: new GraphQLSchema({
-      types: [personType],
-      query: queryType,
-    }),
-    source: `
-      {
-        person {
-          friends
-          otherFriends
-        }
-      }
-    `,
-  });
-
-  expect(errors).toBe(undefined);
-
-  expect(spy).toHaveBeenCalledOnce();
-
-  expect(spy).toHaveBeenCalledWith({
-    query: { test: 'test' },
-    projection: { friends: 1, otherFriends: 1 },
-    skip: 0,
-    limit: 0,
-  });
-
-  expect(data!.person).toMatchObject({
-    friends: ['Mario', 'Luigi'],
-    otherFriends: ['Mario', 'Luigi'],
-  });
+  assert.strictEqual(spy.mock.callCount(), 1);
+  assert.deepStrictEqual(spy.mock.calls[0].arguments, [
+    {
+      query: { test: "test" },
+      projection: { friends: 1, otherFriends: 1 },
+      skip: 0,
+      limit: 0,
+    },
+  ]);
 });
 
-test('should aggregate same queries projections and skip and limit', async () => {
-  const spy = vi.fn().mockImplementation(() => null);
+test("should aggregate same queries projections and skip and limit", async (t) => {
+  const spy = t.mock.fn();
   const loader = new TestLoader(spy);
 
-  const personType = new GraphQLObjectType({
-    name: 'Person',
-    fields: () => ({
-      friends: {
-        type: new GraphQLList(GraphQLString),
-        async resolve(source, args, context, info) {
-          await loader.loadMany({
-            query: { test: 'test' },
-            projection: { friends: 1 },
-            skip: 0,
-            limit: 10,
-          });
-
-          return ['Mario', 'Luigi'];
-        },
-      },
-      otherFriends: {
-        type: new GraphQLList(GraphQLString),
-        async resolve(source, args, context, info) {
-          await loader.loadMany({
-            query: { test: 'test' },
-            projection: { otherFriends: 1 },
-            skip: 5,
-            limit: 15,
-          });
-
-          return ['Mario', 'Luigi'];
-        },
-      },
+  await Promise.all([
+    loader.loadMany({
+      query: { test: "test" },
+      projection: { friends: 1 },
+      skip: 0,
+      limit: 10,
     }),
-  });
-
-  const queryType = new GraphQLObjectType({
-    name: 'Query',
-    fields: () => ({
-      person: {
-        type: personType,
-        resolve: () => {
-          return {};
-        },
-      },
+    loader.loadMany({
+      query: { test: "test" },
+      projection: { otherFriends: 1 },
+      skip: 5,
+      limit: 15,
     }),
-  });
+  ]);
 
-  const { errors, data } = await graphql({
-    schema: new GraphQLSchema({
-      types: [personType],
-      query: queryType,
-    }),
-    source: `
-      {
-        person {
-          friends
-          otherFriends
-        }
-      }
-    `,
-  });
-
-  expect(errors).toBe(undefined);
-
-  expect(spy).toHaveBeenCalledOnce();
-  expect(spy).toHaveBeenCalledWith({
-    query: { test: 'test' },
-    projection: { friends: 1, otherFriends: 1 },
-    skip: 0,
-    limit: 15,
-  });
-
-  expect(data!.person).toMatchObject({
-    friends: ['Mario', 'Luigi'],
-    otherFriends: ['Mario', 'Luigi'],
-  });
+  assert.strictEqual(spy.mock.callCount(), 1);
+  assert.deepStrictEqual(spy.mock.calls[0].arguments, [
+    {
+      query: { test: "test" },
+      projection: { friends: 1, otherFriends: 1 },
+      skip: 0,
+      limit: 15,
+    },
+  ]);
 });

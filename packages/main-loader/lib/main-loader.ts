@@ -68,7 +68,7 @@ export abstract class MainLoader<
     return key as unknown as Key<TQuery>;
   }
 
-  protected onError(error: Error, key: Key<TQuery>) { }
+  protected onError(error: Error, key: Key<TQuery>) {}
 
   protected abstract execute(
     key: Key<TQuery>,

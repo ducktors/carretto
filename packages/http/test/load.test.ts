@@ -1,81 +1,38 @@
-import { expect, test, vi } from 'vitest';
-import { URL } from 'node:url';
-import { request } from 'undici';
-import { stringify } from 'node:querystring';
-import { graphql, GraphQLNonNull, GraphQLObjectType, GraphQLSchema, GraphQLString } from 'graphql';
+import { test } from "node:test";
+import { stringify } from "node:querystring";
+import Undici from "undici";
 
-import { DataloaderHttp } from '../lib';
+import { DataloaderHttp } from "../lib";
+import assert from "node:assert";
 
-vi.mock('undici');
+const url = "http://localhost:3000";
 
-const url = 'http://localhost:3000';
-
-test('should aggregate same queries projections', async () => {
-  vi.mocked(request).mockImplementationOnce(((input: string) => {
-    expect(input).toBe(
-      `${url}/?${stringify({ projection: ['firstName', 'lastName'] })}&skip=0&limit=0`,
+test("should aggregate same queries projections", async (t) => {
+  t.mock.method(Undici, "request", ((input: string) => {
+    assert.strictEqual(
+      input,
+      `${url}/?${stringify({
+        projection: ["firstName", "lastName"],
+      })}&skip=0&limit=0`
     );
-    return Promise.resolve({ body: { json: () => ({ firstName: 'Mario', lastName: 'Rossi' }) } });
+    return Promise.resolve({
+      body: {
+        json: () => ({ firstName: "Mario", lastName: "Rossi" }),
+      },
+    });
   }) as any);
   const loader = new DataloaderHttp();
 
-  const personType = new GraphQLObjectType({
-    name: 'Person',
-    fields: () => ({
-      firstName: {
-        type: new GraphQLNonNull(GraphQLString),
-        async resolve(source, args, context, info) {
-          const result = await loader.load<any>({
-            query: new URL(url),
-            projection: { firstName: 1 },
-          });
-          return result?.firstName;
-        },
-      },
-      lastName: {
-        type: new GraphQLNonNull(GraphQLString),
-        async resolve(source, args, context, info) {
-          const result = await loader.load<any>({
-            query: new URL(url),
-            projection: { lastName: 1 },
-          });
-          return result?.lastName;
-        },
-      },
+  await Promise.all([
+    loader.load<any>({
+      query: new URL(url),
+      projection: { firstName: 1 },
     }),
-  });
-
-  const queryType = new GraphQLObjectType({
-    name: 'Query',
-    fields: () => ({
-      person: {
-        type: personType,
-        resolve: () => {
-          return {};
-        },
-      },
+    loader.load<any>({
+      query: new URL(url),
+      projection: { lastName: 1 },
     }),
-  });
+  ]);
 
-  const { errors, data } = await graphql({
-    schema: new GraphQLSchema({
-      types: [personType],
-      query: queryType,
-    }),
-    source: `
-      {
-        person {
-          firstName
-          lastName
-        }
-      }
-    `,
-  });
-
-  expect(errors).toBe(undefined);
-
-  expect(data!.person).toMatchObject({
-    firstName: 'Mario',
-    lastName: 'Rossi',
-  });
+  assert.strictEqual(Undici.request.mock.calls.length, 1);
 });

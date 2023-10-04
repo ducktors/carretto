@@ -8,8 +8,10 @@
   "scripts": {
     "build": "rimraf dist && tsc --build",
     "check:types": "tsc --noEmit",
-    "test": "pnpm check:types && vitest run",
-    "test:ci": "vitest run --coverage --silent"
+    "test": "pnpm check:types && pnpm unit",
+    "unit": "tsx --test test/*.ts",
+    "test:watch": "tsx --watch --test ./test/*.ts",
+    "test:coverage": "c8 --all --src src --reporter lcov --reporter text tsx --test ./test/*.ts"
   },
   "keywords": [],
   "author": "Alessandro Magionami - @alemagio",
@@ -20,10 +22,7 @@
     "tslib": "^2.4.1"
   },
   "devDependencies": {
-    "@ducktors/tsconfig": "^0.1.1",
-    "@types/node": "^18.11.18",
-    "@vitest/coverage-istanbul": "^0.27.3",
-    "graphql": "^16.6.0",
+    "fastify-tsconfig": "^2.0.0",
     "rimraf": "^4.1.2",
     "undici": "^5.19.1"
   },
