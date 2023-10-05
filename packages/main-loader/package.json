@@ -11,7 +11,7 @@
     "test": "pnpm check:types && pnpm unit",
     "unit": "tsx --test test/*.ts",
     "test:watch": "tsx --watch --test ./test/*.ts",
-    "test:coverage": "c8 --all --src src --reporter lcov --reporter text tsx --test ./test/*.ts"
+    "test:coverage": "c8 --all --src dist --reporter lcov --reporter text tsx --test ./test/*.ts"
   },
   "keywords": [],
   "author": "Alessandro Magionami - @alemagio",
