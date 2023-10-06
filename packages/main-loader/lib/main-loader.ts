@@ -48,7 +48,8 @@ export abstract class MainLoader<
 
     const resultSet = await Promise.all(promises);
     return keys.map((key) => {
-      return indexedPromises.get(hash(key.query))?.[indexedPromises.get(hash(key.query))];
+      // biome-ignore lint/style/noNonNullAssertion: <explanation>
+      return resultSet[indexedPromises.get(hash(key.query))!];
     });
   }
 
