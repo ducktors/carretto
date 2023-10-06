@@ -1,19 +1,14 @@
 {
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
     "lineWidth": 100,
-    "ignore": [
-      "**/dist/*",
-      "**/coverage/*"
-    ]
+    "ignore": ["**/dist/*", "**/coverage/*"]
   },
   "linter": {
     "enabled": true,
-    "ignore": [
-      "**/dist/*",
-      "**/coverage/*"
-    ],
+    "ignore": ["**/dist/*", "**/coverage/*"],
     "rules": {
       "recommended": true,
       "style": {

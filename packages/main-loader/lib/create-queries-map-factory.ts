@@ -1,8 +1,8 @@
-import { hash } from './hash';
 import { mergeProjections } from '@carretto/projection';
+import { hash } from './hash';
+import { Key } from './key';
 import { updateKeyLimit } from './update-key-limit';
 import { updateKeySkip } from './update-key-skip';
-import { Key } from './key';
 
 export const createQueriesMapFactory =
   <TQuery extends object>() =>
@@ -11,7 +11,7 @@ export const createQueriesMapFactory =
     for (const key of keys) {
       const queryHash = hash(key.query);
 
-      let mappedKey = queriesMap.get(queryHash);
+      const mappedKey = queriesMap.get(queryHash);
       if (!mappedKey) {
         queriesMap.set(queryHash, key);
         continue;
@@ -19,7 +19,7 @@ export const createQueriesMapFactory =
 
       const newMappedKey: Key<TQuery> = {
         query: key.query,
-        projection: mergeProjections(queriesMap.get(queryHash)!.projection, key.projection),
+        projection: mergeProjections(queriesMap.get(queryHash)?.projection, key.projection),
       };
 
       if (Object.hasOwn(key, 'skip')) {

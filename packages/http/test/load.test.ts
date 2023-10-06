@@ -1,23 +1,23 @@
-import { test } from "node:test";
-import { stringify } from "node:querystring";
-import Undici from "undici";
+import { stringify } from 'node:querystring';
+import { test } from 'node:test';
+import Undici from 'undici';
 
-import { DataloaderHttp } from "../lib";
-import assert from "node:assert";
+import assert from 'node:assert';
+import { DataloaderHttp } from '../lib';
 
-const url = "http://localhost:3000";
+const url = 'http://localhost:3000';
 
-test("should aggregate same queries projections", async (t) => {
-  t.mock.method(Undici, "request", ((input: string) => {
+test('should aggregate same queries projections', async (t) => {
+  t.mock.method(Undici, 'request', ((input: string) => {
     assert.strictEqual(
       input,
       `${url}/?${stringify({
-        projection: ["firstName", "lastName"],
-      })}&skip=0&limit=0`
+        projection: ['firstName', 'lastName'],
+      })}&skip=0&limit=0`,
     );
     return Promise.resolve({
       body: {
-        json: () => ({ firstName: "Mario", lastName: "Rossi" }),
+        json: () => ({ firstName: 'Mario', lastName: 'Rossi' }),
       },
     });
   }) as any);
