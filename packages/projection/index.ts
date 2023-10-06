@@ -1,2 +1,2 @@
-export { mergeProjections } from "./lib";
-export type { Projection } from "./lib";
+export { mergeProjections } from './lib';
+export type { Projection } from './lib';

@@ -1,7 +1,7 @@
 import { stringify } from 'node:querystring';
-import { request } from 'undici';
 import { MainLoader } from '@carretto/main-loader';
 import { Projection } from '@carretto/projection';
+import { request } from 'undici';
 
 import { Key } from './key';
 

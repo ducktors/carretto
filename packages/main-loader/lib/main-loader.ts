@@ -1,15 +1,15 @@
-import DataLoader, { BatchLoadFn } from "dataloader";
+import DataLoader, { BatchLoadFn } from 'dataloader';
 
-import { hash } from "./hash";
-import type { Key } from "./key";
-import { createQueriesMapFactory } from "./create-queries-map-factory";
+import { createQueriesMapFactory } from './create-queries-map-factory';
+import { hash } from './hash';
+import type { Key } from './key';
 
 const createQueriesMap = createQueriesMapFactory();
 
 export abstract class MainLoader<
   TReturn,
   TQuery extends object,
-  TLoadKey extends Pick<Key<TQuery>, "query" | "skip" | "limit"> = Key<TQuery>
+  TLoadKey extends Pick<Key<TQuery>, 'query' | 'skip' | 'limit'> = Key<TQuery>,
 > {
   protected loader: DataLoader<Key<TQuery>, TReturn>;
 
@@ -18,20 +18,16 @@ export abstract class MainLoader<
       this.batchLoadFn.bind(this) as BatchLoadFn<Key<TQuery>, TReturn>,
       {
         cacheKeyFn: this.cacheKeyFn,
-      }
+      },
     );
   }
 
-  public async load<U extends TReturn = TReturn>(
-    key: TLoadKey
-  ): Promise<U | null> {
+  public async load<U extends TReturn = TReturn>(key: TLoadKey): Promise<U | null> {
     const internalKey = this.preLoad(key);
     return this.loader.load(internalKey) as Promise<U | null>;
   }
 
-  public async loadMany<U extends TReturn = TReturn>(
-    key: TLoadKey
-  ): Promise<U[]> {
+  public async loadMany<U extends TReturn = TReturn>(key: TLoadKey): Promise<U[]> {
     const internalKey = this.preLoad(key);
     const { skip, limit } = key;
     return this.loader.load({
@@ -52,7 +48,7 @@ export abstract class MainLoader<
 
     const resultSet = await Promise.all(promises);
     return keys.map((key) => {
-      return resultSet[indexedPromises.get(hash(key.query))!];
+      return indexedPromises.get(hash(key.query))?.[indexedPromises.get(hash(key.query))];
     });
   }
 
@@ -72,6 +68,6 @@ export abstract class MainLoader<
 
   protected abstract execute(
     key: Key<TQuery>,
-    options?: unknown
+    options?: unknown,
   ): Promise<TReturn | TReturn[] | null>;
 }

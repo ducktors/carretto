@@ -1,9 +1,9 @@
-import { setup, teardown } from "vitest-mongodb";
-import { test, before, after } from "node:test";
-import assert from "node:assert";
+import assert from 'node:assert';
+import { after, before, test } from 'node:test';
+import { setup, teardown } from 'vitest-mongodb';
 
-import { DataloaderMongoDB } from "../lib";
-import { Document, MongoClient, ObjectId, WithId } from "mongodb";
+import { Document, MongoClient, ObjectId, WithId } from 'mongodb';
+import { DataloaderMongoDB } from '../lib';
 
 let client: MongoClient;
 before(async () => {
@@ -17,16 +17,16 @@ after(async () => {
   await teardown();
 });
 
-test("should aggregate same queries projections", async (t) => {
+test('should aggregate same queries projections', async (t) => {
   const personId = new ObjectId();
-  const db = client.db("test");
-  const collection = db.collection<WithId<Document>>("people");
+  const db = client.db('test');
+  const collection = db.collection<WithId<Document>>('people');
   await collection.insertOne({
     _id: personId,
-    firstName: "Mario",
-    lastName: "Rossi",
+    firstName: 'Mario',
+    lastName: 'Rossi',
   });
-  t.mock.method(collection, "findOne");
+  t.mock.method(collection, 'findOne');
   const loader = new DataloaderMongoDB(collection);
 
   const results = await Promise.all([
@@ -42,6 +42,6 @@ test("should aggregate same queries projections", async (t) => {
 
   assert.strictEqual(collection.findOne.mock.calls.length, 1);
 
-  assert.equal(results[0]!.firstName, "Mario");
-  assert.equal(results[0]!.lastName, "Rossi");
+  assert.equal(results[0]?.firstName, 'Mario');
+  assert.equal(results[0]?.lastName, 'Rossi');
 });

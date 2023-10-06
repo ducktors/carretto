@@ -1,4 +1,4 @@
-import { Key, MainLoader } from "../../";
+import { Key, MainLoader } from '../../';
 
 export class TestLoader extends MainLoader<void, object> {
   public spy: (key: Key<any>) => Promise<void>;
