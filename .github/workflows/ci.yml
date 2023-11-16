@@ -4,7 +4,7 @@ on:
   pull_request:
 
 env:
-  TURBO_API: https://turborepo-remote-cache.fly.dev
+  TURBO_API: ${{ vars.TURBO_API }}
   TURBO_TEAM: team_ducktors
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
