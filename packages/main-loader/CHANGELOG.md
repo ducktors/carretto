@@ -1,5 +1,11 @@
 # @carretto/main-loader
 
+## 0.5.0
+
+### Minor Changes
+
+- 06ff64b: Remove sorting as generic, only support Record<string, 1 | -1> as sorting type
+
 ## 0.4.1
 
 ### Patch Changes

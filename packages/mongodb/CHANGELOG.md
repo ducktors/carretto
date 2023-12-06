@@ -1,5 +1,16 @@
 # @carretto/mongodb
 
+## 0.3.0
+
+### Minor Changes
+
+- 06ff64b: Remove sorting as generic, only support Record<string, 1 | -1> as sorting type
+
+### Patch Changes
+
+- Updated dependencies [06ff64b]
+  - @carretto/main-loader@0.5.0
+
 ## 0.2.1
 
 ### Patch Changes
