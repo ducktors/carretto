@@ -1,5 +1,5 @@
 {
   "teamid": "team_ducktors",
-  "apiurl": "https://turborepo-remote-cache.fly.dev",
+  "apiurl": "https://turbo.ducktors.dev",
   "token": "turbotoken-oss"
 }
