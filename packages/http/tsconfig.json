@@ -1,14 +1,8 @@
 {
-  "extends": "fastify-tsconfig",
+  "extends": "@ducktors/tsconfig",
   "compilerOptions": {
     "outDir": "dist"
   },
-  "include": [
-    "**/*.ts"
-  ],
-  "exclude": [
-    "test",
-    "node_modules",
-    "dist"
-  ]
+  "include": ["**/*.ts"],
+  "exclude": ["test", "node_modules", "dist"]
 }

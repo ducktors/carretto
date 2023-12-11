@@ -22,10 +22,7 @@
   },
   "devDependencies": {
     "@types/dot-object": "^2.1.2",
-    "fastify-tsconfig": "^2.0.0",
     "rimraf": "^4.1.2"
   },
-  "files": [
-    "dist"
-  ]
+  "files": ["dist"]
 }

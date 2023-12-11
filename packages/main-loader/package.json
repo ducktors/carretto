@@ -24,7 +24,6 @@
   "devDependencies": {
     "@types/object-hash": "^2.2.1",
     "dataloader": "^2.1.0",
-    "fastify-tsconfig": "^2.0.0",
     "rimraf": "^4.1.2"
   },
   "peerDependencies": {

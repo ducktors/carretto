@@ -22,7 +22,6 @@
     "tslib": "^2.4.1"
   },
   "devDependencies": {
-    "fastify-tsconfig": "^2.0.0",
     "mongodb": "^4.17.0",
     "rimraf": "^4.1.2",
     "vitest-mongodb": "^0.0.5"

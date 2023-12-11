@@ -22,7 +22,6 @@
     "tslib": "^2.4.1"
   },
   "devDependencies": {
-    "fastify-tsconfig": "^2.0.0",
     "rimraf": "^4.1.2",
     "undici": "^5.26.2"
   },
