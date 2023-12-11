@@ -1,5 +1,13 @@
 # @carretto/main-loader
 
+## 0.5.1
+
+### Patch Changes
+
+- 9577c09: Fix declaration types not being shipped
+- Updated dependencies [9577c09]
+  - @carretto/projection@0.0.2
+
 ## 0.5.0
 
 ### Minor Changes
