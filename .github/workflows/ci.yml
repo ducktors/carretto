@@ -26,9 +26,9 @@ jobs:
         run: rm tsconfig.json || true # https://github.com/wagoid/commitlint-github-action/issues/560#issuecomment-1277659864
 
       - name: Check commit message
-        uses: wagoid/commitlint-github-action@v5
+        uses: wagoid/commitlint-github-action@v6
         with:
-          configFile: commitlint.config.js
+          configFile: commitlint.config.cjs
           failOnWarnings: false
           helpURL: https://github.com/ducktors/turborepo-remote-cache#how-to-commit
 
