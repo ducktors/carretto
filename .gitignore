@@ -2,3 +2,6 @@ dist
 node_modules
 coverage
 *.log
+.turbo/cache
+.turbo/cookies
+.turbo/daemon
