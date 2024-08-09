@@ -29,7 +29,7 @@
     "fastify-tsconfig": "^2.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
-    "tsx": "^3.13.0",
+    "tsx": "^4.13.0",
     "turbo": "^1.10.6",
     "typescript": "^5.2.2",
     "vitest-mongodb": "^0.0.5"
