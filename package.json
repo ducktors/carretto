@@ -36,6 +36,6 @@
     "tsx": "^3.13.0",
     "turbo": "^2.0.0",
     "typescript": "^5.5.4",
-    "vitest-mongodb": "^0.0.5"
+    "vitest-mongodb": "^1.0.0"
   }
 }
