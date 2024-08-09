@@ -19,7 +19,7 @@
   "dependencies": {
     "@carretto/projection": "workspace:*",
     "object-hash": "^3.0.0",
-    "tslib": "^2.4.1"
+    "tslib": "^2.6.3"
   },
   "devDependencies": {
     "@types/object-hash": "^2.2.1",
