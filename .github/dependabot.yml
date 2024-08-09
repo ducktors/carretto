@@ -8,3 +8,12 @@ updates:
       - "matteovivona"
     reviewers:
       - "matteovivona"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "alemagio"
+    reviewers:
+      - "matteovivona"
