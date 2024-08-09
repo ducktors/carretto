@@ -35,7 +35,7 @@
     "lint-staged": "^15.2.7",
     "tsx": "^3.13.0",
     "turbo": "^2.0.0",
-    "typescript": "^5.2.2",
+    "typescript": "^5.5.4",
     "vitest-mongodb": "^0.0.5"
   }
 }
