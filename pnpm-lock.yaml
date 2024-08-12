@@ -101,8 +101,8 @@ importers:
         version: 2.6.3
     devDependencies:
       '@types/object-hash':
-        specifier: ^2.2.1
-        version: 2.2.1
+        specifier: ^3.0.6
+        version: 3.0.6
       dataloader:
         specifier: ^2.2.2
         version: 2.2.2
@@ -820,8 +820,8 @@ packages:
   '@types/node@20.8.2':
     resolution: {integrity: sha512-Vvycsc9FQdwhxE3y3DzeIxuEJbWGDsnrxvMADzTDF/lcdR9/K+AQIeAghTQsHtotg/q0j3WEOYS/jQgSdWue3w==}
 
-  '@types/object-hash@2.2.1':
-    resolution: {integrity: sha512-i/rtaJFCsPljrZvP/akBqEwUP2y5cZLOmvO+JaYnz01aPknrQ+hB5MRcO7iqCUsFaYfTG8kGfKUyboA07xeDHQ==}
+  '@types/object-hash@3.0.6':
+    resolution: {integrity: sha512-fOBV8C1FIu2ELinoILQ+ApxcUKz4ngq+IWUYrxSGjXzzjUALijilampwkMgEtJ+h2njAW3pi853QpzNVCHB73w==}
 
   '@types/semver@7.5.0':
     resolution: {integrity: sha512-G8hZ6XJiHnuhQKR7ZmysCeJWE08o8T0AXtk5darsCaTVsYZhhgUrq53jizaR2FvsoeCwJhlmwTjkXBY5Pn/ZHw==}
@@ -3441,7 +3441,7 @@ snapshots:
 
   '@types/node@20.8.2': {}
 
-  '@types/object-hash@2.2.1': {}
+  '@types/object-hash@3.0.6': {}
 
   '@types/semver@7.5.0': {}
 
