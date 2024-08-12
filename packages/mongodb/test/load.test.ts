@@ -1,20 +1,21 @@
 import assert from 'node:assert';
 import { after, before, test } from 'node:test';
-import { setup, teardown } from 'vitest-mongodb';
+import { MongoMemoryServer } from 'mongodb-memory-server';
 
 import { Document, MongoClient, ObjectId, WithId } from 'mongodb';
 import { DataloaderMongoDB } from '../lib';
 
 let client: MongoClient;
+let mongod: MongoMemoryServer;
 before(async () => {
-  await setup();
-  client = new MongoClient(global.__MONGO_URI__);
+  mongod = await MongoMemoryServer.create();
+  client = new MongoClient(mongod.getUri());
   await client.connect();
 });
 
 after(async () => {
   await client.close();
-  await teardown();
+  await mongod.stop();
 });
 
 test('should aggregate same queries projections', async (t) => {
