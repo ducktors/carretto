@@ -4,11 +4,21 @@
     "enabled": true,
     "indentStyle": "space",
     "lineWidth": 100,
-    "ignore": ["**/dist/*", "**/coverage/*"]
+    "ignore": [
+      "**/dist/*",
+      "**/coverage/*",
+      ".turbo/**",
+      "biome.json"
+    ]
   },
   "linter": {
     "enabled": true,
-    "ignore": ["**/dist/*", "**/coverage/*"],
+    "ignore": [
+      "**/dist/*",
+      "**/coverage/*",
+      ".turbo/**",
+      "biome.json"
+    ],
     "rules": {
       "recommended": true,
       "style": {

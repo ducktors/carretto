@@ -23,12 +23,14 @@
   },
   "devDependencies": {
     "@types/object-hash": "^2.2.1",
-    "dataloader": "^2.1.0",
+    "dataloader": "^2.2.2",
     "rimraf": "^6.0.1"
   },
   "peerDependencies": {
-    "dataloader": "^2.1.0",
+    "dataloader": "^2.2.2",
     "mongodb": "^4.17.0"
   },
-  "files": ["dist"]
+  "files": [
+    "dist"
+  ]
 }
