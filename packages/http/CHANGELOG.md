@@ -1,5 +1,16 @@
 # @carretto/http
 
+## 0.2.2
+
+### Patch Changes
+
+- 5a2c4c5: Updates prod and devDependencies
+- Bump dependencies
+- Updated dependencies [5a2c4c5]
+- Updated dependencies
+  - @carretto/main-loader@0.5.2
+  - @carretto/projection@0.0.3
+
 ## 0.2.1
 
 ### Patch Changes
