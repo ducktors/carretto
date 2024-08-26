@@ -4,7 +4,7 @@ on:
   pull_request:
   push:
     branches:
-      - main
+      - changeset-release/main
   
 env:
   TURBO_API: ${{ vars.TURBO_API }}
