@@ -1,5 +1,15 @@
 # @carretto/main-loader
 
+## 0.5.2
+
+### Patch Changes
+
+- 5a2c4c5: Updates prod and devDependencies
+- Bump dependencies
+- Updated dependencies [5a2c4c5]
+- Updated dependencies
+  - @carretto/projection@0.0.3
+
 ## 0.5.1
 
 ### Patch Changes
