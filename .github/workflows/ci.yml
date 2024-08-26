@@ -3,9 +3,7 @@ name: CI
 on:
   pull_request:
   push:
-    branches:
-      - changeset-release/main
-  
+
 env:
   TURBO_API: ${{ vars.TURBO_API }}
   TURBO_TEAM: team_ducktors
