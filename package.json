@@ -32,7 +32,7 @@
     "c8": "^8.0.1",
     "commitlint-plugin-function-rules": "^4.0.0",
     "fastify-tsconfig": "^2.0.0",
-    "husky": "^9.1.1",
+    "husky": "^9.1.5",
     "lint-staged": "^15.2.9",
     "tsx": "^3.14.0",
     "turbo": "^2.0.14",
