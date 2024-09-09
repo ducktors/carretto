@@ -27,8 +27,8 @@ importers:
         specifier: ^19.2.2
         version: 19.2.2
       '@commitlint/prompt':
-        specifier: ^19.3.1
-        version: 19.4.0(@types/node@20.14.11)(typescript@5.5.4)
+        specifier: ^19.4.1
+        version: 19.4.1(@types/node@20.14.11)(typescript@5.5.4)
       '@ducktors/tsconfig':
         specifier: ^1.0.0
         version: 1.0.0(typescript@5.5.4)
@@ -451,8 +451,8 @@ packages:
     resolution: {integrity: sha512-Il+tNyOb8VDxN3P6XoBBwWJtKKGzHlitEuXA5BP6ir/3loWlsSqDr5aecl6hZcC/spjq4pHqNh0qPlfeWu38QA==}
     engines: {node: '>=v18'}
 
-  '@commitlint/prompt@19.4.0':
-    resolution: {integrity: sha512-r7rk9wEosRb18rR3vJsBz2jrpnbQodchS0Z1+pJmAsp32VTPX49AQRrNslmBl9OMwyyRkZkGDY0jDyOOpQTwQw==}
+  '@commitlint/prompt@19.4.1':
+    resolution: {integrity: sha512-OSqGl+Qip08CWOL0VYaS3PZ5lDbM6JN8by+L9M9FoRseWzDmHKMrxPEXySlD/SMhJjLAVTBh6Mfuf0NzhvTXUw==}
     engines: {node: '>=v18'}
 
   '@commitlint/read@19.4.0':
@@ -3067,7 +3067,7 @@ snapshots:
       conventional-changelog-angular: 7.0.0
       conventional-commits-parser: 5.0.0
 
-  '@commitlint/prompt@19.4.0(@types/node@20.14.11)(typescript@5.5.4)':
+  '@commitlint/prompt@19.4.1(@types/node@20.14.11)(typescript@5.5.4)':
     dependencies:
       '@commitlint/ensure': 19.0.3
       '@commitlint/load': 19.4.0(@types/node@20.14.11)(typescript@5.5.4)
