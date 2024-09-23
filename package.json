@@ -24,7 +24,7 @@
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.8",
     "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.4.1",
+    "@commitlint/config-conventional": "^19.5.0",
     "@commitlint/lint": "^19.2.2",
     "@commitlint/prompt": "^19.4.1",
     "@ducktors/tsconfig": "^1.0.0",
