@@ -25,7 +25,7 @@
     "@changesets/cli": "^2.27.8",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
-    "@commitlint/lint": "^19.2.2",
+    "@commitlint/lint": "^19.5.0",
     "@commitlint/prompt": "^19.4.1",
     "@ducktors/tsconfig": "^1.0.0",
     "@types/node": "^20.14.11",
