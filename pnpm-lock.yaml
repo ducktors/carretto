@@ -24,8 +24,8 @@ importers:
         specifier: ^19.5.0
         version: 19.5.0
       '@commitlint/lint':
-        specifier: ^19.2.2
-        version: 19.2.2
+        specifier: ^19.5.0
+        version: 19.5.0
       '@commitlint/prompt':
         specifier: ^19.4.1
         version: 19.4.1(@types/node@20.14.11)(typescript@5.6.2)
@@ -40,7 +40,7 @@ importers:
         version: 10.1.2
       commitlint-plugin-function-rules:
         specifier: ^4.0.0
-        version: 4.0.0(@commitlint/lint@19.2.2)
+        version: 4.0.0(@commitlint/lint@19.5.0)
       fastify-tsconfig:
         specifier: ^2.0.0
         version: 2.0.0
@@ -439,16 +439,8 @@ packages:
     resolution: {integrity: sha512-yNy088miE52stCI3dhG/vvxFo9e4jFkU1Mj3xECfzp/bIS/JUay4491huAlVcffOoMK1cd296q0W92NlER6r3A==}
     engines: {node: '>=v18'}
 
-  '@commitlint/is-ignored@19.2.2':
-    resolution: {integrity: sha512-eNX54oXMVxncORywF4ZPFtJoBm3Tvp111tg1xf4zWXGfhBPKpfKG6R+G3G4v5CPlRROXpAOpQ3HMhA9n1Tck1g==}
-    engines: {node: '>=v18'}
-
   '@commitlint/is-ignored@19.5.0':
     resolution: {integrity: sha512-0XQ7Llsf9iL/ANtwyZ6G0NGp5Y3EQ8eDQSxv/SRcfJ0awlBY4tHFAvwWbw66FVUaWICH7iE5en+FD9TQsokZ5w==}
-    engines: {node: '>=v18'}
-
-  '@commitlint/lint@19.2.2':
-    resolution: {integrity: sha512-xrzMmz4JqwGyKQKTpFzlN0dx0TAiT7Ran1fqEBgEmEj+PU98crOFtysJgY+QdeSagx6EDRigQIXJVnfrI0ratA==}
     engines: {node: '>=v18'}
 
   '@commitlint/lint@19.5.0':
@@ -463,16 +455,8 @@ packages:
     resolution: {integrity: sha512-INOUhkL/qaKqwcTUvCE8iIUf5XHsEPCLY9looJ/ipzi7jtGhgmtH7OOFiNvwYgH7mA8osUWOUDV8t4E2HAi4xA==}
     engines: {node: '>=v18'}
 
-  '@commitlint/message@19.0.0':
-    resolution: {integrity: sha512-c9czf6lU+9oF9gVVa2lmKaOARJvt4soRsVmbR7Njwp9FpbBgste5i7l/2l5o8MmbwGh4yE1snfnsy2qyA2r/Fw==}
-    engines: {node: '>=v18'}
-
   '@commitlint/message@19.5.0':
     resolution: {integrity: sha512-R7AM4YnbxN1Joj1tMfCyBryOC5aNJBdxadTZkuqtWi3Xj0kMdutq16XQwuoGbIzL2Pk62TALV1fZDCv36+JhTQ==}
-    engines: {node: '>=v18'}
-
-  '@commitlint/parse@19.0.3':
-    resolution: {integrity: sha512-Il+tNyOb8VDxN3P6XoBBwWJtKKGzHlitEuXA5BP6ir/3loWlsSqDr5aecl6hZcC/spjq4pHqNh0qPlfeWu38QA==}
     engines: {node: '>=v18'}
 
   '@commitlint/parse@19.5.0':
@@ -495,16 +479,8 @@ packages:
     resolution: {integrity: sha512-CU/GscZhCUsJwcKTJS9Ndh3AKGZTNFIOoQB2n8CmFnizE0VnEuJoum+COW+C1lNABEeqk6ssfc1Kkalm4bDklA==}
     engines: {node: '>=v18'}
 
-  '@commitlint/rules@19.0.3':
-    resolution: {integrity: sha512-TspKb9VB6svklxNCKKwxhELn7qhtY1rFF8ls58DcFd0F97XoG07xugPjjbVnLqmMkRjZDbDIwBKt9bddOfLaPw==}
-    engines: {node: '>=v18'}
-
   '@commitlint/rules@19.5.0':
     resolution: {integrity: sha512-hDW5TPyf/h1/EufSHEKSp6Hs+YVsDMHazfJ2azIk9tHPXS6UqSz1dIRs1gpqS3eMXgtkT7JH6TW4IShdqOwhAw==}
-    engines: {node: '>=v18'}
-
-  '@commitlint/to-lines@19.0.0':
-    resolution: {integrity: sha512-vkxWo+VQU5wFhiP9Ub9Sre0FYe019JxFikrALVoD5UGa8/t3yOJEpEhxC5xKiENKKhUkTpEItMTRAjHw2SCpZw==}
     engines: {node: '>=v18'}
 
   '@commitlint/to-lines@19.5.0':
@@ -3037,22 +3013,10 @@ snapshots:
       '@commitlint/types': 19.5.0
       chalk: 5.3.0
 
-  '@commitlint/is-ignored@19.2.2':
-    dependencies:
-      '@commitlint/types': 19.5.0
-      semver: 7.6.3
-
   '@commitlint/is-ignored@19.5.0':
     dependencies:
       '@commitlint/types': 19.5.0
       semver: 7.6.3
-
-  '@commitlint/lint@19.2.2':
-    dependencies:
-      '@commitlint/is-ignored': 19.2.2
-      '@commitlint/parse': 19.0.3
-      '@commitlint/rules': 19.0.3
-      '@commitlint/types': 19.0.3
 
   '@commitlint/lint@19.5.0':
     dependencies:
@@ -3093,15 +3057,7 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@commitlint/message@19.0.0': {}
-
   '@commitlint/message@19.5.0': {}
-
-  '@commitlint/parse@19.0.3':
-    dependencies:
-      '@commitlint/types': 19.5.0
-      conventional-changelog-angular: 7.0.0
-      conventional-commits-parser: 5.0.0
 
   '@commitlint/parse@19.5.0':
     dependencies:
@@ -3146,22 +3102,12 @@ snapshots:
       lodash.mergewith: 4.6.2
       resolve-from: 5.0.0
 
-  '@commitlint/rules@19.0.3':
-    dependencies:
-      '@commitlint/ensure': 19.0.3
-      '@commitlint/message': 19.0.0
-      '@commitlint/to-lines': 19.0.0
-      '@commitlint/types': 19.5.0
-      execa: 8.0.1
-
   '@commitlint/rules@19.5.0':
     dependencies:
       '@commitlint/ensure': 19.5.0
       '@commitlint/message': 19.5.0
       '@commitlint/to-lines': 19.5.0
       '@commitlint/types': 19.5.0
-
-  '@commitlint/to-lines@19.0.0': {}
 
   '@commitlint/to-lines@19.5.0': {}
 
@@ -3812,9 +3758,9 @@ snapshots:
 
   commander@6.2.1: {}
 
-  commitlint-plugin-function-rules@4.0.0(@commitlint/lint@19.2.2):
+  commitlint-plugin-function-rules@4.0.0(@commitlint/lint@19.5.0):
     dependencies:
-      '@commitlint/lint': 19.2.2
+      '@commitlint/lint': 19.5.0
 
   commondir@1.0.1: {}
 
