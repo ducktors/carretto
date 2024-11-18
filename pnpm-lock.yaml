@@ -126,8 +126,8 @@ importers:
         version: 2.8.1
     devDependencies:
       mongodb:
-        specifier: ^4.17.2
-        version: 4.17.2
+        specifier: ^6.10.0
+        version: 6.10.0(@aws-sdk/credential-providers@3.423.0)(socks@2.7.1)
       mongodb-memory-server:
         specifier: ^10.1.2
         version: 10.1.2(@aws-sdk/credential-providers@3.423.0)(socks@2.7.1)
