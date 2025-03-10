@@ -1,6 +1,6 @@
 {
   "name": "@carretto/main-loader",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "private": false,
   "description": "A dataloader implementation with adapters",
   "main": "dist/index.js",
@@ -19,18 +19,16 @@
   "dependencies": {
     "@carretto/projection": "workspace:*",
     "object-hash": "^3.0.0",
-    "tslib": "^2.6.3"
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "@types/object-hash": "^2.2.1",
-    "dataloader": "^2.2.2",
+    "dataloader": "^2.2.3",
     "rimraf": "^6.0.1"
   },
   "peerDependencies": {
-    "dataloader": "^2.2.2",
+    "dataloader": "^2.2.3",
     "mongodb": "^4.17.0"
   },
-  "files": [
-    "dist"
-  ]
+  "files": ["dist"]
 }
