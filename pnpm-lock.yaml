@@ -42,8 +42,8 @@ importers:
         specifier: ^4.0.1
         version: 4.0.1(@commitlint/lint@19.8.0)
       fastify-tsconfig:
-        specifier: ^2.0.0
-        version: 2.0.0
+        specifier: ^3.0.0
+        version: 3.0.0
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -82,8 +82,8 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       undici:
-        specifier: ^6.21.0
-        version: 6.21.1
+        specifier: ^7.1.0
+        version: 7.1.0
 
   packages/main-loader:
     dependencies:
@@ -126,8 +126,8 @@ importers:
         version: 2.8.1
     devDependencies:
       mongodb:
-        specifier: ^4.17.2
-        version: 4.17.2
+        specifier: ^6.14.2
+        version: 6.14.2(@aws-sdk/credential-providers@3.423.0)(socks@2.7.1)
       mongodb-memory-server:
         specifier: ^10.1.3
         version: 10.1.4(@aws-sdk/credential-providers@3.423.0)(socks@2.7.1)
@@ -658,9 +658,6 @@ packages:
   '@mongodb-js/saslprep@1.1.0':
     resolution: {integrity: sha512-Xfijy7HvfzzqiOAhAepF4SGN5e9leLkMvg/OPOF97XemjfVCYN/oWa75wnkc6mltMSTwY+XlbhWgUOJmkFspSw==}
 
-  '@mongodb-js/saslprep@1.1.8':
-    resolution: {integrity: sha512-qKwC/M/nNNaKUBMQ0nuzm47b7ZYWQHN3pcXq4IIcoSBc2hOIrflAxJduIvvqmhoz3gR2TacTAs8vlsCVPkiEdQ==}
-
   '@mongodb-js/saslprep@1.2.0':
     resolution: {integrity: sha512-+ywrb0AqkfaYuhHs6LxKWgqbh3I72EpEgESCw37o+9qPx9WTCkgDm2B+eMrwehGtHBWHFU4GXvnSCNiFhhausg==}
 
@@ -845,8 +842,8 @@ packages:
   '@types/object-hash@2.2.1':
     resolution: {integrity: sha512-i/rtaJFCsPljrZvP/akBqEwUP2y5cZLOmvO+JaYnz01aPknrQ+hB5MRcO7iqCUsFaYfTG8kGfKUyboA07xeDHQ==}
 
-  '@types/webidl-conversions@7.0.0':
-    resolution: {integrity: sha512-xTE1E+YF4aWPJJeUzaZI5DRntlkY3+BCVJi0axFptnjGmAoWxkyREIh/XMrfxVLejwQxMCfDXdICo0VLxThrog==}
+  '@types/webidl-conversions@7.0.3':
+    resolution: {integrity: sha512-CiJJvcRtIgzadHCYXw7dqEnMNRjhGZlYK05Mj9OyktqV8uVT8fD2BFOB7S1uwBE3Kj2Z+4UyPmFw/Ixgw/LAlA==}
 
   '@types/whatwg-url@11.0.5':
     resolution: {integrity: sha512-coYR071JRaHa+xoEvvYqvnIHaVqaYrLPbsufM9BF63HkwI5Lgmy2QR8Q5K/lYDYo5AK82wOvSOS0UsLTpTG7uQ==}
@@ -1218,6 +1215,10 @@ packages:
   fastify-tsconfig@2.0.0:
     resolution: {integrity: sha512-pvYwdtbZUJr/aTD7ZE0rGlvtYpx7IThHKVLBoqCKmT3FJpwm23XA2+PDmq8ZzfqqG4ajpyrHd5bkIixcIFjPhQ==}
     engines: {node: '>=18.0.0'}
+
+  fastify-tsconfig@3.0.0:
+    resolution: {integrity: sha512-TxFM9+MUUM2Ub6chZbP5sPNUFaPWA86kHU0VRd4o9OP6PBP92cj9c4/IEsnLoVHcLgrgXf2GUXWUzkJAO9iKFQ==}
+    engines: {node: '>=20.0.0'}
 
   fastq@1.14.0:
     resolution: {integrity: sha512-eR2D+V9/ExcbF9ls441yIuN6TI2ED1Y2ZcA5BmMtJsOkWOFRJQ0Jt0g1UwqXJJVAb+V+umH5Dfr8oh4EVP7VVg==}
@@ -1839,10 +1840,6 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  punycode@2.1.1:
-    resolution: {integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==}
-    engines: {node: '>=6'}
-
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
@@ -2129,9 +2126,9 @@ packages:
   undici-types@6.20.0:
     resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
-  undici@6.21.1:
-    resolution: {integrity: sha512-q/1rj5D0/zayJB2FraXdaWxbhWiNKDvu8naDT2dl1yTlvJp4BLtOcp2a5BvgGNQpYYJzau7tf1WgKv3b+7mqpQ==}
-    engines: {node: '>=18.17'}
+  undici@7.1.0:
+    resolution: {integrity: sha512-3+mdX2R31khuLCm2mKExSlMdJsfol7bJkIMH80tdXA74W34rT1jKemUTlYR7WY3TqsV4wfOgpatWmmB2Jl1+5g==}
+    engines: {node: '>=20.18.1'}
 
   unicorn-magic@0.1.0:
     resolution: {integrity: sha512-lRfVq8fE8gz6QMBuDM6a+LO3IAzTi05H6gCVaUpir2E1Rwpo4ZUog45KpNXKC/Mn3Yb9UDuHumeFTo9iV/D9FQ==}
@@ -3105,11 +3102,6 @@ snapshots:
       sparse-bitfield: 3.0.3
     optional: true
 
-  '@mongodb-js/saslprep@1.1.8':
-    dependencies:
-      sparse-bitfield: 3.0.3
-    optional: true
-
   '@mongodb-js/saslprep@1.2.0':
     dependencies:
       sparse-bitfield: 3.0.3
@@ -3418,16 +3410,16 @@ snapshots:
 
   '@types/object-hash@2.2.1': {}
 
-  '@types/webidl-conversions@7.0.0': {}
+  '@types/webidl-conversions@7.0.3': {}
 
   '@types/whatwg-url@11.0.5':
     dependencies:
-      '@types/webidl-conversions': 7.0.0
+      '@types/webidl-conversions': 7.0.3
 
   '@types/whatwg-url@8.2.2':
     dependencies:
       '@types/node': 22.13.10
-      '@types/webidl-conversions': 7.0.0
+      '@types/webidl-conversions': 7.0.3
 
   JSONStream@1.3.5:
     dependencies:
@@ -3785,6 +3777,8 @@ snapshots:
     optional: true
 
   fastify-tsconfig@2.0.0: {}
+
+  fastify-tsconfig@3.0.0: {}
 
   fastq@1.14.0:
     dependencies:
@@ -4277,7 +4271,7 @@ snapshots:
       socks: 2.7.1
     optionalDependencies:
       '@aws-sdk/credential-providers': 3.423.0
-      '@mongodb-js/saslprep': 1.1.8
+      '@mongodb-js/saslprep': 1.2.0
     transitivePeerDependencies:
       - aws-crt
 
@@ -4430,8 +4424,6 @@ snapshots:
       find-up: 4.1.0
 
   prettier@2.8.8: {}
-
-  punycode@2.1.1: {}
 
   punycode@2.3.1: {}
 
@@ -4634,7 +4626,7 @@ snapshots:
 
   tr46@3.0.0:
     dependencies:
-      punycode: 2.1.1
+      punycode: 2.3.1
 
   tr46@4.1.1:
     dependencies:
@@ -4685,7 +4677,7 @@ snapshots:
 
   undici-types@6.20.0: {}
 
-  undici@6.21.1: {}
+  undici@7.1.0: {}
 
   unicorn-magic@0.1.0: {}
 
