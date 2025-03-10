@@ -10,6 +10,7 @@ env:
   TURBO_API: ${{ vars.TURBO_API }}
   TURBO_TEAM: team_ducktors
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  PNPM_VERSION: 10.6.2
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -24,11 +25,11 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - uses: pnpm/action-setup@v4
         with:
-          version: 9.5.0
+          version: ${{ env.PNPM_VERSION }}
 
       - name: Get pnpm store directory
         id: pnpm-cache
