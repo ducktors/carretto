@@ -1,9 +1,9 @@
-import { Collection, Document, Filter, WithId } from 'mongodb';
+import type { Collection, Document, Filter, WithId } from 'mongodb';
 
 import { MainLoader } from '@carretto/main-loader';
-import { Projection } from '@carretto/projection';
+import type { Projection } from '@carretto/projection';
 
-import { Key } from './key';
+import type { Key } from './key';
 
 export class DataloaderMongoDB<T extends WithId<Document>> extends MainLoader<T, Filter<T>> {
   private collection: Collection<T>;

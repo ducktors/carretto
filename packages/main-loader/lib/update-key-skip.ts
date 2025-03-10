@@ -1,4 +1,4 @@
-import { Key } from './key';
+import type { Key } from './key';
 
 export function updateKeySkip<TQuery extends object>(
   previous: Pick<Key<TQuery>, 'skip'>,

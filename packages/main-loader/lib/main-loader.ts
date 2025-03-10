@@ -1,4 +1,4 @@
-import DataLoader, { BatchLoadFn } from 'dataloader';
+import DataLoader, { type BatchLoadFn } from 'dataloader';
 
 import { createQueriesMapFactory } from './create-queries-map-factory';
 import { hash } from './hash';

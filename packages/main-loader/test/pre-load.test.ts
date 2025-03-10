@@ -1,4 +1,4 @@
-import assert from 'assert';
+import assert from 'node:assert';
 import { test } from 'node:test';
 import { TestLoader } from './util/test-loader-preload';
 

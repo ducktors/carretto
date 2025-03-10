@@ -1,6 +1,6 @@
 import { mergeProjections } from '@carretto/projection';
 import { hash } from './hash';
-import { Key } from './key';
+import type { Key } from './key';
 import { updateKeyLimit } from './update-key-limit';
 import { updateKeySkip } from './update-key-skip';
 
