@@ -29,8 +29,10 @@ export function deepMerge(target: any, obj: any) {
 
     if (oldVal === 1) {
       return { ...obj, ...target };
+      // biome-ignore lint/style/noUselessElse: too risky to remove
     } else if (newVal === 1) {
       return { ...target, ...obj };
+      // biome-ignore lint/style/noUselessElse: too risky to remove
     } else if (isObject(oldVal) && isObject(newVal)) {
       target[key] = deepMerge(oldVal, newVal);
     } else {
