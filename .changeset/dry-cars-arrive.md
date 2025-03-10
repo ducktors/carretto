@@ -5,4 +5,5 @@
 "@carretto/http": patch
 ---
 
-Update several depDependencies
+Move to PNPM v10
+Update several devDependencies (biome, tsx and vitest-mongodb)
