@@ -2,7 +2,7 @@ import assert from 'node:assert';
 import { after, before, test } from 'node:test';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 
-import { Document, MongoClient, ObjectId, WithId } from 'mongodb';
+import { type Document, MongoClient, ObjectId, type WithId } from 'mongodb';
 import { DataloaderMongoDB } from '../lib';
 
 let client: MongoClient;

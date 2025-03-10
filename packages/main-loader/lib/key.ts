@@ -1,4 +1,4 @@
-import { Projection } from '@carretto/projection';
+import type { Projection } from '@carretto/projection';
 
 export interface Key<TQuery extends object> {
   query: TQuery;

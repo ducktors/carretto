@@ -42,8 +42,8 @@ importers:
         specifier: ^4.0.1
         version: 4.0.1(@commitlint/lint@19.8.0)
       fastify-tsconfig:
-        specifier: ^3.0.0
-        version: 3.0.0
+        specifier: ^2.0.0
+        version: 2.0.0
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -51,10 +51,10 @@ importers:
         specifier: ^15.4.3
         version: 15.4.3
       tsx:
-        specifier: ^4.19.2
+        specifier: ^4.19.3
         version: 4.19.3
       turbo:
-        specifier: ^2.3.3
+        specifier: ^2.4.4
         version: 2.4.4
       typescript:
         specifier: ^5.7.3
@@ -1228,10 +1228,6 @@ packages:
     resolution: {integrity: sha512-pvYwdtbZUJr/aTD7ZE0rGlvtYpx7IThHKVLBoqCKmT3FJpwm23XA2+PDmq8ZzfqqG4ajpyrHd5bkIixcIFjPhQ==}
     engines: {node: '>=18.0.0'}
 
-  fastify-tsconfig@3.0.0:
-    resolution: {integrity: sha512-TxFM9+MUUM2Ub6chZbP5sPNUFaPWA86kHU0VRd4o9OP6PBP92cj9c4/IEsnLoVHcLgrgXf2GUXWUzkJAO9iKFQ==}
-    engines: {node: '>=20.0.0'}
-
   fastq@1.14.0:
     resolution: {integrity: sha512-eR2D+V9/ExcbF9ls441yIuN6TI2ED1Y2ZcA5BmMtJsOkWOFRJQ0Jt0g1UwqXJJVAb+V+umH5Dfr8oh4EVP7VVg==}
 
@@ -1651,10 +1647,6 @@ packages:
 
   mongodb@4.17.0:
     resolution: {integrity: sha512-LZGMIPjPfWEfhPJATk1s9IvVTD18tyfKdT/0blCMih5vGagk2SwA9wFAUPMdtJpTrhXmyfGgwAaMkvneX2bn2A==}
-    engines: {node: '>=12.9.0'}
-
-  mongodb@4.17.2:
-    resolution: {integrity: sha512-mLV7SEiov2LHleRJPMPrK2PMyhXFZt2UQLC4VD4pnth3jMjYKHhtqfwwkkvS/NXuo/Fp3vbhaNcXrIDaLRb9Tg==}
     engines: {node: '>=12.9.0'}
 
   mongodb@6.14.2:
@@ -3798,8 +3790,6 @@ snapshots:
 
   fastify-tsconfig@2.0.0: {}
 
-  fastify-tsconfig@3.0.0: {}
-
   fastq@1.14.0:
     dependencies:
       reusify: 1.0.4
@@ -4281,17 +4271,6 @@ snapshots:
     optionalDependencies:
       '@aws-sdk/credential-providers': 3.423.0
       '@mongodb-js/saslprep': 1.1.0
-    transitivePeerDependencies:
-      - aws-crt
-
-  mongodb@4.17.2:
-    dependencies:
-      bson: 4.7.2
-      mongodb-connection-string-url: 2.6.0
-      socks: 2.7.1
-    optionalDependencies:
-      '@aws-sdk/credential-providers': 3.423.0
-      '@mongodb-js/saslprep': 1.2.0
     transitivePeerDependencies:
       - aws-crt
 

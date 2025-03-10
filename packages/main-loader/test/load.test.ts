@@ -1,6 +1,5 @@
+import assert from 'node:assert';
 import { test } from 'node:test';
-
-import assert from 'assert';
 import { TestLoader } from './util/test-loader';
 
 test('should aggregate same queries projections', async (t) => {

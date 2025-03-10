@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert';
 import { createQueriesMapFactory } from '../lib/create-queries-map-factory';
 import { hash } from '../lib/hash';
-import { Key } from '../lib/key';
+import type { Key } from '../lib/key';
 
 const createQueriesMap = createQueriesMapFactory();
 

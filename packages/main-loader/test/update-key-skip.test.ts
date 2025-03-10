@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 import test from 'node:test';
-import { Key } from '../lib/key';
+import type { Key } from '../lib/key';
 import { updateKeySkip } from '../lib/update-key-skip';
 
 test('should return 0 when previous and current have no skip', () => {

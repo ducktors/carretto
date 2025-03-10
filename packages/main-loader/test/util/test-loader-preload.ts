@@ -1,5 +1,4 @@
-import { Key, MainLoader } from '../../';
-
+import { type Key, MainLoader } from '../../src';
 interface TestQuery {
   test: string;
   added?: string;

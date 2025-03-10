@@ -1,6 +1,6 @@
 import * as dotObject from 'dot-object';
 
-import { Projection } from './projection';
+import type { Projection } from './projection';
 
 export function mergeProjections(old?: Projection, curr?: Projection) {
   let result = {};

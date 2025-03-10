@@ -1,9 +1,9 @@
 import { stringify } from 'node:querystring';
 import { MainLoader } from '@carretto/main-loader';
-import { Projection } from '@carretto/projection';
+import type { Projection } from '@carretto/projection';
 import { request } from 'undici';
 
-import { Key } from './key';
+import type { Key } from './key';
 
 export class DataloaderHttp<T> extends MainLoader<T, URL> {
   protected async execute(key: Pick<Key, 'query' | 'skip' | 'limit'> & { projection: Projection }) {

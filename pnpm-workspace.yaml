@@ -1,5 +1,6 @@
 packages:
   - packages/*
 onlyBuiltDependencies:
-  - mongodb-memory-server
+  - '@biomejs/biome'
   - esbuild
+  - mongodb-memory-server
