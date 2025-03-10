@@ -4,7 +4,7 @@
   "author": "Alessandro Magionami - @alemagio",
   "license": "MIT",
   "scripts": {
-    "build": "pnpm turbo build --color",
+    "build": "turbo build --color",
     "test": "turbo run test",
     "preinstall": "npx only-allow pnpm",
     "release": "pnpm run build && changeset publish",
