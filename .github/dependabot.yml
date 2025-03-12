@@ -17,3 +17,23 @@ updates:
       - "alemagio"
     reviewers:
       - "matteovivona"
+
+  - package-ecosystem: npm
+    directory: /packages/http
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /packages/main-loader
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /packages/mongodb
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /packages/projection
+    schedule:
+      interval: daily
