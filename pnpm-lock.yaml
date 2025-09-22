@@ -132,8 +132,8 @@ importers:
         specifier: ^6.19.0
         version: 6.19.0(@aws-sdk/credential-providers@3.423.0)(socks@2.7.1)
       mongodb-memory-server:
-        specifier: ^10.2.0
-        version: 10.2.0(@aws-sdk/credential-providers@3.423.0)(socks@2.7.1)
+        specifier: ^10.2.1
+        version: 10.2.1(@aws-sdk/credential-providers@3.423.0)(socks@2.7.1)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -262,8 +262,8 @@ packages:
     resolution: {integrity: sha512-sYSDwRTl7yE7LhHkPzemGzmIXFVHSsi3AQ1KeNEk84eBqxMHHcCc2kqklaBk2roXWe50QDgRMy1ikZUxvtzNHQ==}
     engines: {node: '>=14.0.0'}
 
-  '@aws-sdk/util-locate-window@3.873.0':
-    resolution: {integrity: sha512-xcVhZF6svjM5Rj89T1WzkjQmrTF6dpR2UvIHPMTnSZoNe6CixejPZ6f0JJ2kAhO8H+dUHwNBlsUgOTIKiK/Syg==}
+  '@aws-sdk/util-locate-window@3.893.0':
+    resolution: {integrity: sha512-T89pFfgat6c8nMmpI8eKjBcDcgJq36+m9oiXbcUzeU55MP9ZuGgBomGjGnHaEyF36jenW9gmg3NfZDm0AO2XPg==}
     engines: {node: '>=18.0.0'}
 
   '@aws-sdk/util-user-agent-browser@3.418.0':
@@ -930,14 +930,19 @@ packages:
   async-mutex@0.5.0:
     resolution: {integrity: sha512-1A94B18jkJ3DYq284ohPxoXbfTA5HsQ7/Mf4DEhcyLx3Bz27Rh59iScbB6EPiP+B+joue6YCxcMXSbFC1tZKwA==}
 
-  b4a@1.6.7:
-    resolution: {integrity: sha512-OnAYlL5b7LEkALw87fUVafQw5rVR9RjwGd4KUwNQ6DrrNmaVaUCgLipfVlzrPQ4tWOR9P0IXGNOx50jYCCdSJg==}
+  b4a@1.7.1:
+    resolution: {integrity: sha512-ZovbrBV0g6JxK5cGUF1Suby1vLfKjv4RWi8IxoaO/Mon8BDD9I21RxjHFtgQ+kskJqLAVyQZly3uMBui+vhc8Q==}
+    peerDependencies:
+      react-native-b4a: '*'
+    peerDependenciesMeta:
+      react-native-b4a:
+        optional: true
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
-  bare-events@2.6.0:
-    resolution: {integrity: sha512-EKZ5BTXYExaNqi3I3f9RtEsaI/xBSGjE0XZCZilPzFAV/goswFHuPd9jEZlPIZ/iNZJwDSao9qRiScySz7MbQg==}
+  bare-events@2.7.0:
+    resolution: {integrity: sha512-b3N5eTW1g7vXkw+0CXh/HazGTcO5KYuu/RCNaJbDMPI6LHDi+7qe8EmxKUVe1sUbY2KZOVZFyj62x0OEz9qyAA==}
 
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
@@ -1145,6 +1150,15 @@ packages:
       supports-color:
         optional: true
 
+  debug@4.4.3:
+    resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+
   defaults@1.0.4:
     resolution: {integrity: sha512-eFuaLoy/Rxalv2kr+lqMlUnrDWV+3j4pljOIJgLIhI058IQfWJ7vXhyEIHu+HtC738klGALYxOKDO0bQP3tg8A==}
 
@@ -1211,6 +1225,9 @@ packages:
 
   eventemitter3@5.0.1:
     resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
+
+  events-universal@1.0.0:
+    resolution: {integrity: sha512-1KVXP1Oq8SiC0HsRraCryA4XGrZ2uJgIt/h4X+mB/8pzMKE7L8yBDN2lBlqJZeUwLAt7kf80m/5GX3HvoCrSGA==}
 
   extendable-error@0.1.7:
     resolution: {integrity: sha512-UOiS2in6/Q0FK0R0q6UY9vYpQ21mr/Qn1KOnte7vsACuNJf514WvCCUHSRCPcgjPT2bAhNIJdlE6bVap1GKmeg==}
@@ -1622,12 +1639,12 @@ packages:
   mongodb-connection-string-url@3.0.2:
     resolution: {integrity: sha512-rMO7CGo/9BFwyZABcKAWL8UJwH/Kc2x0g72uhDWzG48URRax5TCIcJ7Rc3RZqffZzO/Gwff/jyKwCU9TN8gehA==}
 
-  mongodb-memory-server-core@10.2.0:
-    resolution: {integrity: sha512-IsgWlsXdZxbMNoa3hqazMQ/QeMazEztMBr/fK6OrHefJLlZtCEtIIYoAKJDYDQjcwId0CRkW3WRy05WEuyClDg==}
+  mongodb-memory-server-core@10.2.1:
+    resolution: {integrity: sha512-vXMZkwV2wj0a8GtewgXJdX5Kh6BfPDJDLxhg5IKuFB4IOW7Qr2+oviODkf2FM3nEpj/E6krXq2SvDrJmnWOigQ==}
     engines: {node: '>=16.20.1'}
 
-  mongodb-memory-server@10.2.0:
-    resolution: {integrity: sha512-FG4OVoXjBHC7f8Mdyj1TZ6JyTtMex+qniEzoY1Rsuo/FvHSOHYzGYVbuElamjHuam+HLxWTWEpc43fqke8WNGw==}
+  mongodb-memory-server@10.2.1:
+    resolution: {integrity: sha512-wvPofpRZHB4dGwHFplhKYYTwujrcAA0WbIXFNld5hNM6Y+yZWPP5uS8Tw54rOGx9gfr8qwGbDVy9vdNcMG+o+w==}
     engines: {node: '>=16.20.1'}
 
   mongodb@4.17.0:
@@ -1951,8 +1968,8 @@ packages:
   sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
 
-  streamx@2.22.1:
-    resolution: {integrity: sha512-znKXEBxfatz2GBNK02kRnCXjV+AA4kjZIUxeWSr3UGirZMJfTE9uiwKHobnbgxWyL/JWro8tTq+vOqAK1/qbSA==}
+  streamx@2.23.0:
+    resolution: {integrity: sha512-kn+e44esVfn2Fa/O0CPFcex27fjIL6MkVae0Mm6q+E6f0hWv578YCERbv+4m02cjxvDsPKLnmxral/rR6lBMAg==}
 
   string-argv@0.3.2:
     resolution: {integrity: sha512-aqD2Q0144Z+/RqG52NeHEkZauTAUWJO8c6yTftGJKO3Tja5tUgIfmIl6kExvhtxSDP7fXB6DvzkfMpCd/F3G+Q==}
@@ -2210,7 +2227,7 @@ snapshots:
       '@aws-crypto/supports-web-crypto': 3.0.0
       '@aws-crypto/util': 3.0.0
       '@aws-sdk/types': 3.418.0
-      '@aws-sdk/util-locate-window': 3.873.0
+      '@aws-sdk/util-locate-window': 3.893.0
       '@aws-sdk/util-utf8-browser': 3.259.0
       tslib: 1.14.1
     optional: true
@@ -2589,7 +2606,7 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@aws-sdk/util-locate-window@3.873.0':
+  '@aws-sdk/util-locate-window@3.893.0':
     dependencies:
       tslib: 2.8.1
     optional: true
@@ -3439,12 +3456,11 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  b4a@1.6.7: {}
+  b4a@1.7.1: {}
 
   balanced-match@1.0.2: {}
 
-  bare-events@2.6.0:
-    optional: true
+  bare-events@2.7.0: {}
 
   base64-js@1.5.1: {}
 
@@ -3625,6 +3641,10 @@ snapshots:
     dependencies:
       ms: 2.1.3
 
+  debug@4.4.3:
+    dependencies:
+      ms: 2.1.3
+
   defaults@1.0.4:
     dependencies:
       clone: 1.0.4
@@ -3702,6 +3722,10 @@ snapshots:
 
   eventemitter3@5.0.1: {}
 
+  events-universal@1.0.0:
+    dependencies:
+      bare-events: 2.7.0
+
   extendable-error@0.1.7: {}
 
   external-editor@3.1.0:
@@ -3761,9 +3785,9 @@ snapshots:
       path-exists: 5.0.0
       unicorn-magic: 0.1.0
 
-  follow-redirects@1.15.11(debug@4.4.1):
+  follow-redirects@1.15.11(debug@4.4.3):
     optionalDependencies:
-      debug: 4.4.1
+      debug: 4.4.3
 
   foreground-child@3.2.1:
     dependencies:
@@ -3854,7 +3878,7 @@ snapshots:
   https-proxy-agent@7.0.6:
     dependencies:
       agent-base: 7.1.4
-      debug: 4.4.1
+      debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
@@ -4115,13 +4139,13 @@ snapshots:
       '@types/whatwg-url': 11.0.5
       whatwg-url: 14.2.0
 
-  mongodb-memory-server-core@10.2.0(@aws-sdk/credential-providers@3.423.0)(socks@2.7.1):
+  mongodb-memory-server-core@10.2.1(@aws-sdk/credential-providers@3.423.0)(socks@2.7.1):
     dependencies:
       async-mutex: 0.5.0
       camelcase: 6.3.0
-      debug: 4.4.1
+      debug: 4.4.3
       find-cache-dir: 3.3.2
-      follow-redirects: 1.15.11(debug@4.4.1)
+      follow-redirects: 1.15.11(debug@4.4.3)
       https-proxy-agent: 7.0.6
       mongodb: 6.19.0(@aws-sdk/credential-providers@3.423.0)(socks@2.7.1)
       new-find-package-json: 2.0.0
@@ -4135,13 +4159,14 @@ snapshots:
       - gcp-metadata
       - kerberos
       - mongodb-client-encryption
+      - react-native-b4a
       - snappy
       - socks
       - supports-color
 
-  mongodb-memory-server@10.2.0(@aws-sdk/credential-providers@3.423.0)(socks@2.7.1):
+  mongodb-memory-server@10.2.1(@aws-sdk/credential-providers@3.423.0)(socks@2.7.1):
     dependencies:
-      mongodb-memory-server-core: 10.2.0(@aws-sdk/credential-providers@3.423.0)(socks@2.7.1)
+      mongodb-memory-server-core: 10.2.1(@aws-sdk/credential-providers@3.423.0)(socks@2.7.1)
       tslib: 2.8.1
     transitivePeerDependencies:
       - '@aws-sdk/credential-providers'
@@ -4149,6 +4174,7 @@ snapshots:
       - gcp-metadata
       - kerberos
       - mongodb-client-encryption
+      - react-native-b4a
       - snappy
       - socks
       - supports-color
@@ -4183,7 +4209,7 @@ snapshots:
 
   new-find-package-json@2.0.0:
     dependencies:
-      debug: 4.4.1
+      debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
@@ -4414,12 +4440,13 @@ snapshots:
 
   sprintf-js@1.0.3: {}
 
-  streamx@2.22.1:
+  streamx@2.23.0:
     dependencies:
+      events-universal: 1.0.0
       fast-fifo: 1.3.2
       text-decoder: 1.2.3
-    optionalDependencies:
-      bare-events: 2.6.0
+    transitivePeerDependencies:
+      - react-native-b4a
 
   string-argv@0.3.2: {}
 
@@ -4464,9 +4491,11 @@ snapshots:
 
   tar-stream@3.1.7:
     dependencies:
-      b4a: 1.6.7
+      b4a: 1.7.1
       fast-fifo: 1.3.2
-      streamx: 2.22.1
+      streamx: 2.23.0
+    transitivePeerDependencies:
+      - react-native-b4a
 
   term-size@2.2.1: {}
 
@@ -4478,7 +4507,9 @@ snapshots:
 
   text-decoder@1.2.3:
     dependencies:
-      b4a: 1.6.7
+      b4a: 1.7.1
+    transitivePeerDependencies:
+      - react-native-b4a
 
   text-extensions@2.4.0: {}
 
@@ -4569,13 +4600,14 @@ snapshots:
   vitest-mongodb@1.0.1(@aws-sdk/credential-providers@3.423.0)(socks@2.7.1):
     dependencies:
       debug: 4.4.0
-      mongodb-memory-server: 10.2.0(@aws-sdk/credential-providers@3.423.0)(socks@2.7.1)
+      mongodb-memory-server: 10.2.1(@aws-sdk/credential-providers@3.423.0)(socks@2.7.1)
     transitivePeerDependencies:
       - '@aws-sdk/credential-providers'
       - '@mongodb-js/zstd'
       - gcp-metadata
       - kerberos
       - mongodb-client-encryption
+      - react-native-b4a
       - snappy
       - socks
       - supports-color
