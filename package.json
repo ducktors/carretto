@@ -28,7 +28,7 @@
     "@commitlint/lint": "^19.8.1",
     "@commitlint/prompt": "^19.8.1",
     "@ducktors/tsconfig": "^1.0.0",
-    "@types/node": "^24.5.2",
+    "@types/node": "^24.9.1",
     "c8": "^10.1.3",
     "commitlint-plugin-function-rules": "^4.1.0",
     "fastify-tsconfig": "^2.0.0",
