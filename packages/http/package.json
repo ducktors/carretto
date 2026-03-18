@@ -1,6 +1,6 @@
 {
   "name": "@carretto/http",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": false,
   "description": "Http adapter for Carretto dataloader",
   "main": "dist/index.js",
@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "rimraf": "^6.0.1",
-    "undici": "^7.2.3"
+    "undici": "^7.24.0"
   },
   "peerDependencies": {
     "dataloader": "^2.1.0",

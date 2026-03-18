@@ -1,5 +1,15 @@
 # @carretto/http
 
+## 0.2.3
+
+### Patch Changes
+
+- cad4a1f: Move to PNPM v10
+  Update several devDependencies (biome, tsx and vitest-mongodb)
+- Updated dependencies [cad4a1f]
+  - @carretto/main-loader@0.5.3
+  - @carretto/projection@0.0.4
+
 ## 0.2.2
 
 ### Patch Changes
