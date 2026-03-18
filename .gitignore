@@ -5,3 +5,4 @@ coverage
 .turbo/cache
 .turbo/cookies
 .turbo/daemon
+.omc
