@@ -1,5 +1,14 @@
 # @carretto/http
 
+## 0.2.4
+
+### Patch Changes
+
+- a22c818: Bump fast-xml-parser to fix CVE-2026-25896
+- Updated dependencies [a22c818]
+  - @carretto/main-loader@0.5.4
+  - @carretto/projection@0.0.5
+
 ## 0.2.3
 
 ### Patch Changes

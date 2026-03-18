@@ -1,5 +1,11 @@
 # @carretto/projection
 
+## 0.0.5
+
+### Patch Changes
+
+- a22c818: Bump fast-xml-parser to fix CVE-2026-25896
+
 ## 0.0.4
 
 ### Patch Changes
