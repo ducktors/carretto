@@ -15,7 +15,10 @@ jobs:
   release:
     name: Changesets
     runs-on: ubuntu-latest
-    permissions: write-all
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
     steps:
       - name: Harden the runner (Audit all outbound calls)
         uses: step-security/harden-runner@fa2e9d605c4eeb9fcad4c99c224cee0c6c7f3594 # v2.16.0
@@ -27,6 +30,7 @@ jobs:
         uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
           node-version: 22
+          registry-url: 'https://registry.npmjs.org'
 
       - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
         with:
@@ -58,4 +62,3 @@ jobs:
           title: 'Version Release'
         env:
           GITHUB_TOKEN: ${{ secrets.DUCKTORS_PAT }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
