@@ -1,5 +1,14 @@
 # @carretto/mongodb
 
+## 0.3.5
+
+### Patch Changes
+
+- 111d552: Update minimatch to fix CVE CVE-2026-27903
+- Updated dependencies [111d552]
+  - @carretto/main-loader@0.5.5
+  - @carretto/projection@0.0.6
+
 ## 0.3.4
 
 ### Patch Changes
