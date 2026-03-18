@@ -30,7 +30,6 @@ jobs:
         uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
           node-version: 22
-          registry-url: 'https://registry.npmjs.org'
 
       - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
         with:
@@ -63,4 +62,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.DUCKTORS_PAT }}
           NPM_TOKEN: ""
-          NODE_AUTH_TOKEN: ""
