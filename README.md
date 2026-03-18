@@ -21,7 +21,7 @@ Carretto is a modular utility suite designed to simplify and enhance working wit
 
 ## Installation
 
-You will need Node.js v18+ and [pnpm](https://pnpm.io/) 10+.
+You will need Node.js v20+ and [pnpm](https://pnpm.io/) 10+.
 
 ```bash
 # Install the Carretto package you need (example with MongoDB adapter)
