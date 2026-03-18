@@ -14,6 +14,11 @@
     "test:coverage": "c8 --all --src dist --reporter lcov --reporter text tsx --test ./test/*.ts"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ducktors/carretto",
+    "directory": "packages/projection"
+  },
   "author": "Alessandro Magionami - @alemagio",
   "license": "MIT",
   "dependencies": {

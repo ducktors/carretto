@@ -5,6 +5,11 @@
   "description": "MongoDB adapter for Zaino dataloader",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ducktors/carretto",
+    "directory": "packages/mongodb"
+  },
   "scripts": {
     "build": "rimraf dist && tsc --build",
     "check:types": "tsc --noEmit",

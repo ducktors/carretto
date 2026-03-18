@@ -62,3 +62,5 @@ jobs:
           title: 'Version Release'
         env:
           GITHUB_TOKEN: ${{ secrets.DUCKTORS_PAT }}
+          NPM_TOKEN: ""
+          NODE_AUTH_TOKEN: ""
