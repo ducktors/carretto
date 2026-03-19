@@ -1,5 +1,11 @@
 # @carretto/projection
 
+## 1.0.0
+
+### Major Changes
+
+- 89e0850: Deprecates support for Node 18
+
 ## 0.0.6
 
 ### Patch Changes
