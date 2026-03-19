@@ -62,4 +62,5 @@ jobs:
           title: 'Version Release'
         env:
           GITHUB_TOKEN: ${{ secrets.DUCKTORS_PAT }}
-          NODE_AUTH_TOKEN: ${{ secrets.DUCKTORS_NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.DUCKTORS_NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: 'true'
