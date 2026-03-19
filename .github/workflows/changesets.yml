@@ -53,6 +53,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Upgrade npm for trusted publishing
+        run: npm install -g npm@latest
+
+      - name: Create .npmrc for trusted publishing
+        run: echo "//registry.npmjs.org/:_authToken=" > "$HOME/.npmrc"
+
       - name: Create Release Pull Request
         uses: changesets/action@e0145edc7d9d8679003495b11f87bd8ef63c0cba # v1.5.3
         with:
@@ -62,3 +68,4 @@ jobs:
           title: 'Version Release'
         env:
           GITHUB_TOKEN: ${{ secrets.DUCKTORS_PAT }}
+          NPM_CONFIG_PROVENANCE: 'true'
