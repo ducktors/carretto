@@ -1,6 +1,6 @@
 {
   "name": "@carretto/projection",
-  "version": "0.0.6",
+  "version": "1.0.0",
   "private": false,
   "description": "Utilities for projection",
   "main": "dist/index.js",

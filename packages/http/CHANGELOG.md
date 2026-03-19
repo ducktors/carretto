@@ -1,5 +1,17 @@
 # @carretto/http
 
+## 1.0.0
+
+### Major Changes
+
+- 89e0850: Deprecates support for Node 18
+
+### Patch Changes
+
+- Updated dependencies [89e0850]
+  - @carretto/main-loader@1.0.0
+  - @carretto/projection@1.0.0
+
 ## 0.2.5
 
 ### Patch Changes
