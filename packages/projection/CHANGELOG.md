@@ -1,5 +1,17 @@
 # @carretto/projection
 
+## 0.0.6
+
+### Patch Changes
+
+- 111d552: Update minimatch to fix CVE CVE-2026-27903
+
+## 0.0.5
+
+### Patch Changes
+
+- a22c818: Bump fast-xml-parser to fix CVE-2026-25896
+
 ## 0.0.4
 
 ### Patch Changes

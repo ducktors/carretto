@@ -1,5 +1,23 @@
 # @carretto/http
 
+## 0.2.5
+
+### Patch Changes
+
+- 111d552: Update minimatch to fix CVE CVE-2026-27903
+- Updated dependencies [111d552]
+  - @carretto/main-loader@0.5.5
+  - @carretto/projection@0.0.6
+
+## 0.2.4
+
+### Patch Changes
+
+- a22c818: Bump fast-xml-parser to fix CVE-2026-25896
+- Updated dependencies [a22c818]
+  - @carretto/main-loader@0.5.4
+  - @carretto/projection@0.0.5
+
 ## 0.2.3
 
 ### Patch Changes
