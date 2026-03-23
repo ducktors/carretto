@@ -35,7 +35,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
     "tsx": "^4.20.6",
-    "turbo": "^2.5.8",
+    "turbo": "^2.8.20",
     "typescript": "^5.9.3",
     "vitest-mongodb": "^1.0.2"
   },
