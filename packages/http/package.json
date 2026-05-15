@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "rimraf": "^6.0.1",
-    "undici": "^7.24.5"
+    "undici": "^8.3.0"
   },
   "peerDependencies": {
     "dataloader": "^2.1.0",
