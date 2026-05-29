@@ -10,7 +10,7 @@ env:
   TURBO_API: ${{ vars.TURBO_API }}
   TURBO_TEAM: team_ducktors
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-  PNPM_VERSION: 10.6.2
+  PNPM_VERSION: 10.33.2
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

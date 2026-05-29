@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  PNPM_VERSION: 10.6.2
+  PNPM_VERSION: 10.33.2
 
 permissions:
   contents: read
