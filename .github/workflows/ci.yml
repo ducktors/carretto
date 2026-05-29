@@ -94,12 +94,29 @@ jobs:
         run: pnpm build
 
       - name: Are The Types Wrong
+        shell: bash
         run: |
-          npm i -g @arethetypeswrong/cli
-          attw --pack packages/http
-          attw --pack packages/main-loader
-          attw --pack packages/mongodb
-          attw --pack packages/projection
+          set -euo pipefail
+          tmpdir=$(mktemp -d)
+          trap 'rm -rf "$tmpdir"' EXIT
+          cat > "$tmpdir/package.json" <<'EOF'
+          {
+            "dependencies": {
+              "@arethetypeswrong/cli": "0.18.1"
+            },
+            "pnpm": {
+              "overrides": {
+                "fflate": "0.8.2"
+              }
+            }
+          }
+          EOF
+          cd "$tmpdir"
+          pnpm install
+          pnpm exec attw --pack "$GITHUB_WORKSPACE/packages/http"
+          pnpm exec attw --pack "$GITHUB_WORKSPACE/packages/main-loader"
+          pnpm exec attw --pack "$GITHUB_WORKSPACE/packages/mongodb"
+          pnpm exec attw --pack "$GITHUB_WORKSPACE/packages/projection"
 
   lint:
     runs-on: macos-latest
