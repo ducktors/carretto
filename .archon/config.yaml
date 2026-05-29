@@ -1,0 +1,5 @@
+# Pi via OpenRouter — software-factory lab default
+defaultAssistant: pi
+assistants:
+  pi:
+    model: openrouter/deepseek/deepseek-v4-pro
