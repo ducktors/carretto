@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "mongodb": "^7.0.0",
-    "mongodb-memory-server": "^10.2.1",
+    "mongodb-memory-server": "^11.0.1",
     "rimraf": "^6.0.1",
     "vitest-mongodb": "^1.0.2"
   },
