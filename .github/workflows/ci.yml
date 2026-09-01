@@ -79,7 +79,7 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-      - uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+      - uses: actions/cache@2c8a9bd7457de244a408f35966fab2fb45fda9c8 # v6.0.0
         name: Setup pnpm cache
         with:
           path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
@@ -94,12 +94,29 @@ jobs:
         run: pnpm build
 
       - name: Are The Types Wrong
+        shell: bash
         run: |
-          npm i -g @arethetypeswrong/cli
-          attw --pack packages/http
-          attw --pack packages/main-loader
-          attw --pack packages/mongodb
-          attw --pack packages/projection
+          set -euo pipefail
+          tmpdir=$(mktemp -d)
+          trap 'rm -rf "$tmpdir"' EXIT
+          cat > "$tmpdir/package.json" <<'EOF'
+          {
+            "dependencies": {
+              "@arethetypeswrong/cli": "0.18.1"
+            },
+            "pnpm": {
+              "overrides": {
+                "fflate": "0.8.2"
+              }
+            }
+          }
+          EOF
+          cd "$tmpdir"
+          pnpm install
+          pnpm exec attw --pack "$GITHUB_WORKSPACE/packages/http"
+          pnpm exec attw --pack "$GITHUB_WORKSPACE/packages/main-loader"
+          pnpm exec attw --pack "$GITHUB_WORKSPACE/packages/mongodb"
+          pnpm exec attw --pack "$GITHUB_WORKSPACE/packages/projection"
 
   lint:
     runs-on: macos-latest
@@ -129,7 +146,7 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-      - uses: actions/cache@v5
+      - uses: actions/cache@v6
         name: Setup pnpm cache
         with:
           path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
