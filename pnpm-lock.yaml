@@ -46,8 +46,8 @@ importers:
         specifier: ^11.0.0
         version: 11.0.0
       commitlint-plugin-function-rules:
-        specifier: ^4.1.0
-        version: 4.3.2(@commitlint/lint@19.8.1)
+        specifier: ^5.0.1
+        version: 5.0.1(@commitlint/lint@19.8.1)
       fastify-tsconfig:
         specifier: ^2.0.0
         version: 2.0.0
@@ -1139,11 +1139,11 @@ packages:
     resolution: {integrity: sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==}
     engines: {node: '>= 6'}
 
-  commitlint-plugin-function-rules@4.3.2:
-    resolution: {integrity: sha512-UrJfHj7jRislz5qWkBj0mp2EHaFT1LwDdG8uOTofWK/jf84EmNMjmDD+9M6eyrfrgLorTAN3/veRMU0D/vb7CQ==}
-    engines: {node: '>=20'}
+  commitlint-plugin-function-rules@5.0.1:
+    resolution: {integrity: sha512-AC8fH83A+soNq9VKTlLptkbg8Zpfx88ng9hKzdiJ0N+GoYgWTWNt6yFA3zEZ0qy3ekQ4Paf1slkaH1UKWRLUvg==}
+    engines: {node: '>=22'}
     peerDependencies:
-      '@commitlint/lint': '>=19 <21'
+      '@commitlint/lint': '>=19 <22'
 
   commondir@1.0.1:
     resolution: {integrity: sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg==}
@@ -3464,7 +3464,7 @@ snapshots:
 
   commander@6.2.1: {}
 
-  commitlint-plugin-function-rules@4.3.2(@commitlint/lint@19.8.1):
+  commitlint-plugin-function-rules@5.0.1(@commitlint/lint@19.8.1):
     dependencies:
       '@commitlint/lint': 19.8.1
 
